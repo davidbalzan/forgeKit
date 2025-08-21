@@ -51,7 +51,13 @@ ALWAYS PRESERVED:
 │   │       ├── TASK_TEMPLATE.md
 │   │       └── task_template_prompt.md
 │   └── templates/
-│       └── PRD_TEMPLATE.md          # PRD template preserved
+│       ├── PRD_TEMPLATE.md              # PRD template
+│       ├── TECH_STACK_TEMPLATE.md       # Tech stack template
+│       ├── ARCHITECTURE_GUIDE_TEMPLATE.md # Architecture template
+│       ├── PRODUCTION_ROADMAP_TEMPLATE.md # Roadmap template
+│       ├── DESIGN_SYSTEM_TEMPLATE.md    # Design system template
+│       ├── PHASES_README_TEMPLATE.md    # Phases overview template
+│       └── PHASE_README_TEMPLATE.md     # Individual phase template
 │
 ├── .claude/skills/                  # All skills preserved
 ├── .cursor/commands/                # All commands preserved

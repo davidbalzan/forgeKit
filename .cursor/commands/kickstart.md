@@ -34,7 +34,7 @@ Ask about each layer (skip if not applicable):
 **Backend**: Runtime, Framework, Database, ORM
 **Infrastructure**: Package manager, Monorepo (Yes/No), Deployment target
 
-Generate `docs/TECH_STACK.md`.
+Generate `docs/TECH_STACK.md` using `docs/templates/TECH_STACK_TEMPLATE.md` as the structure.
 
 ## Stage 3: Architecture Decisions
 
@@ -43,7 +43,9 @@ For each major technology choice, ask:
 2. What alternatives were considered?
 3. What are the trade-offs?
 
-Generate `docs/ARCHITECTURE_GUIDE.md` and `docs/DECISIONS.md` with initial ADRs.
+Generate using the corresponding templates in `docs/templates/`:
+- `docs/ARCHITECTURE_GUIDE.md` - from `ARCHITECTURE_GUIDE_TEMPLATE.md`
+- `docs/DECISIONS.md` - Initial ADRs for key choices (use existing DECISIONS.md ADR template section as structure)
 
 ## Stage 4: Project Phases
 
@@ -52,7 +54,10 @@ Ask about project scope:
 2. What comes after MVP?
 3. Any hard deadlines?
 
-Generate `docs/PRODUCTION_ROADMAP.md`, `docs/phases/README.md`, and `docs/phases/phase1/README.md`.
+Generate using the corresponding templates in `docs/templates/`:
+- `docs/PRODUCTION_ROADMAP.md` - from `PRODUCTION_ROADMAP_TEMPLATE.md`
+- `docs/phases/README.md` - from `PHASES_README_TEMPLATE.md`
+- `docs/phases/phase1/README.md` - from `PHASE_README_TEMPLATE.md`
 
 ## Stage 5: Initialize Focus
 
@@ -61,7 +66,7 @@ Create `CURRENT_FOCUS.md` at project root pointing to Phase 1.
 ## Stage 6: Design System (Optional)
 
 If frontend exists, ask about colors, typography, component style.
-Generate `docs/DESIGN_SYSTEM.md` if applicable.
+Generate `docs/DESIGN_SYSTEM.md` from `docs/templates/DESIGN_SYSTEM_TEMPLATE.md` if applicable.
 
 ## Stage 7: Summary
 
