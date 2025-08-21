@@ -1,6 +1,6 @@
 # Cursor Prompts & Commands
 
-These prompts and commands help maintain the vibe coding workflow in Cursor.
+These prompts and commands help maintain the ForgeKit workflow in Cursor.
 
 ## Slash Commands (Recommended)
 

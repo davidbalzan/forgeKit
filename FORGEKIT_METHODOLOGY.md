@@ -1,4 +1,4 @@
-# Vibe Coding Project Seed
+# ForgeKit Methodology
 
 A documentation-driven approach to building software projects with AI assistance. This document serves as a prompt/template to bootstrap new projects with a structured, phase-based development methodology.
 

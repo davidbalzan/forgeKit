@@ -1,6 +1,6 @@
 # AI Assistant Commands Guide
 
-This guide explains how to use the vibe coding workflow commands across different IDEs.
+This guide explains how to use the ForgeKit workflow commands across different IDEs.
 
 ---
 
@@ -338,7 +338,7 @@ docs/templates/PRD_TEMPLATE.md       # PRD template
 .claude/skills/*                     # All skills
 .cursor/commands/*                   # All commands
 .vscode/prompts/*                    # All prompts
-VIBE_CODING_SEED.md                  # Core methodology
+FORGEKIT_METHODOLOGY.md                  # Core methodology
 ```
 
 **When to use**: When you want to reuse this template for a new project.

@@ -39,8 +39,7 @@ These files are kept intact for rebuilding:
 ```
 ALWAYS PRESERVED:
 ├── README.md                        # Project README
-├── VIBE_CODING_SEED.md              # Core methodology
-├── TOOLS_PREFERENCE.md              # Tool preferences
+├── FORGEKIT_METHODOLOGY.md              # Core methodology
 │
 ├── docs/
 │   ├── COMMANDS.md                  # Commands guide
@@ -113,7 +112,7 @@ After confirmation:
 
    ## 🔗 Key Files
 
-   - Methodology: `VIBE_CODING_SEED.md`
+   - Methodology: `FORGEKIT_METHODOLOGY.md`
    - Commands: `docs/COMMANDS.md`
 
    ## 📝 Session Notes

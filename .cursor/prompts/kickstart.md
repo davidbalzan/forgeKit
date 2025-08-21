@@ -1,6 +1,6 @@
 # Kickstart - Project Initialization Wizard
 
-Initialize a new project with the complete vibe coding documentation structure. This prompt guides you through setting up all foundational documents for a well-organized, AI-friendly project.
+Initialize a new project with the complete ForgeKit documentation structure. This prompt guides you through setting up all foundational documents for a well-organized, AI-friendly project.
 
 ## Instructions
 

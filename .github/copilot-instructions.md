@@ -1,19 +1,23 @@
-# Vibe Coding Project - Copilot Instructions
+# ForgeKit - Copilot Instructions
 
-This project uses **Vibe Coding** - a documentation-driven approach for building software with AI assistance.
+This project uses **ForgeKit** - a documentation-driven approach for building software with AI assistance.
 
 ## Project Structure
 
 ```
 project-root/
+├── apps/
+│   ├── web/                   ← Frontend (React + Vite + Tailwind)
+│   └── api/                   ← Backend (Node.js + Hono)
+├── packages/
+│   ├── shared/                ← Shared types & utilities
+│   └── ui/                    ← UI component library
 ├── docs/
 │   ├── PRODUCTION_ROADMAP.md  ← Single source of truth (Current Focus at top)
 │   ├── DECISIONS.md           ← Architectural Decision Records
 │   ├── TECH_STACK.md          ← Technology choices
 │   ├── ARCHITECTURE_GUIDE.md  ← System design rationale
 │   └── phases/                ← Phase-based task planning
-├── client/                    ← Frontend (React + Vite)
-├── server/                    ← Backend (Node.js + Hono)
 └── CURRENT_FOCUS.md          ← Quick session context
 ```
 

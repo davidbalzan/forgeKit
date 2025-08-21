@@ -1,14 +1,14 @@
 ---
 name: start-session
-description: Load project context from vibe coding docs at the start of a session
+description: Load project context from ForgeKit docs at the start of a session
 disable-model-invocation: true
 argument-hint: "[optional: specific area to focus on]"
 allowed-tools: Read, Glob, Grep
 ---
 
-# Start Session - Vibe Coding Context Loader
+# Start Session - ForgeKit Context Loader
 
-Load instant context from the vibe coding documentation to understand current project state.
+Load instant context from the ForgeKit documentation to understand current project state.
 
 ## Instructions
 

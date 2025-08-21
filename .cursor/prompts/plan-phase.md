@@ -1,6 +1,6 @@
 # Plan Phase - Task Document Generator
 
-Generate a comprehensive phase task document following the vibe coding methodology.
+Generate a comprehensive phase task document following the ForgeKit methodology.
 
 ## Instructions
 

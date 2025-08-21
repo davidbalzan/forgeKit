@@ -6,7 +6,7 @@ argument-hint: "[category:] <learning>"
 
 # Remember - Global Knowledge Capture
 
-Persist learnings to `~/.claude/knowledge/` and sync to vibeSeed repo.
+Persist learnings to `~/.claude/knowledge/` and sync to ForgeKit repo.
 
 ## Usage
 
@@ -61,14 +61,14 @@ Persist learnings to `~/.claude/knowledge/` and sync to vibeSeed repo.
 4. **Update the index**
    - Ensure `~/.claude/knowledge/README.md` lists all categories
 
-5. **Sync to vibeSeed** (if configured)
-   - Copy knowledge directory to local vibeSeed clone
+5. **Sync to forgeKit** (if configured)
+   - Copy knowledge directory to local forgeKit clone
    - Commit and push changes
-   - VibeSeed path: `~/workspace/vibeSeed` (adjust if different)
+   - ForgeKit path: `~/workspace/forgeKit` (adjust if different)
 
 6. **Confirm to user**
    - Show what was saved and where
-   - Indicate if vibeSeed sync succeeded
+   - Indicate if forgeKit sync succeeded
 
 ## Knowledge File Format
 
@@ -100,16 +100,16 @@ Reference these files for domain-specific learnings.
 | testing | testing.md | Testing strategies and tools |
 ```
 
-## VibeSeed Sync
+## ForgeKit Sync
 
-After saving locally, sync to vibeSeed:
+After saving locally, sync to forgeKit:
 
 ```bash
-# Copy knowledge to vibeSeed
-cp -r ~/.claude/knowledge ~/workspace/vibeSeed/.claude/
+# Copy knowledge to forgeKit
+cp -r ~/.claude/knowledge ~/workspace/forgeKit/.claude/
 
 # Commit and push
-cd ~/workspace/vibeSeed
+cd ~/workspace/forgeKit
 git add .claude/knowledge
 git commit -m "knowledge: Update from $(hostname)"
 git push

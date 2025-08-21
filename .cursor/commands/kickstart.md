@@ -1,6 +1,6 @@
 # Kickstart - Project Initialization
 
-**Objective**: Initialize a new project with the complete vibe coding documentation structure through a guided discovery process.
+**Objective**: Initialize a new project with the complete ForgeKit documentation structure through a guided discovery process.
 
 **Requirements**:
 - Follow the 7-stage discovery flow below
