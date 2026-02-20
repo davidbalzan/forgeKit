@@ -6,7 +6,7 @@ A documentation-driven approach to building software projects with AI assistance
 
 ## 🎯 Philosophy
 
-**Vibe coding** is about maintaining momentum while building complex software with AI assistance. The key principles:
+**ForgeKit** is about maintaining momentum while building complex software with AI assistance. The key principles:
 
 1. **Documentation as Code** - Plans are living documents with checkboxes that track progress
 2. **Phase-Based Development** - Break overwhelming projects into digestible phases
