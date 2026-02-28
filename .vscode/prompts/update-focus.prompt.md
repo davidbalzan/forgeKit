@@ -5,80 +5,28 @@ description: Update CURRENT_FOCUS.md with session progress
 
 # Update Focus - Session Progress Recorder
 
-Update CURRENT_FOCUS.md to capture session progress for future context.
+Update CURRENT_FOCUS.md to capture session progress.
 
 ## Instructions
 
 1. **Read CURRENT_FOCUS.md** to understand existing state
-2. **Gather session progress** from conversation context
-3. **Update the file** with:
-   - Phase and task (if changed)
-   - Quick Context: Done, Next, Blockers
-   - Last Updated date
+2. **Update** with: phase/task (if changed), Done/Next/Blockers, Last Updated date
+3. Keep entries concise and scannable
+4. Date format: YYYY-MM-DD
 
-## CURRENT_FOCUS.md Format
+## Format
 
 ```markdown
-# Current Focus
+## Current Focus
 
-> **Quick reference for AI assistants and team members to instantly know where work stands.**
+**Phase**: Phase N - [Phase Name]
+**Task**: [Current task description]
+**Branch**: `main` or feature branch
+**Last Updated**: YYYY-MM-DD
 
----
+### Quick Context
 
-## 🎯 Active Work
-
-**Phase**: Phase N - [Phase Name]  
-**Task**: Task X.Y - [Task Name]  
-**Sub-step**: X.Y.Z - [Sub-step description]  
-**Branch**: `feature/[branch-name]`
-
----
-
-## 📍 Quick Context
-
-**What we're doing**: [Current work description]
-
-**Why**: [Reason/motivation]
-
-**Blocked by**: [Blockers or "Nothing - clear to proceed"]
-
-**Next up**: [Next task/step]
-
----
-
-## 🔗 Key Files
-
-- Task details: `docs/phases/phaseN/PHASEN_TASKS.md`
-- Phase overview: `docs/phases/phaseN/README.md`
-
----
-
-## 📝 Session Notes
-
-_Add notes here during work sessions. Clear when starting new task._
-
-- [ ] Pending item
-- [x] Completed item
-
----
-
-## 🕐 Last Updated
-
-**Date**: YYYY-MM-DD  
-**By**: [Name/AI]  
-**Status**: 🚧 In Progress
+- **Done**: [Recent completions]
+- **Next**: [Upcoming work]
+- **Blockers**: [Any blockers, or "None"]
 ```
-
-## Update Guidelines
-
-- Keep entries concise and scannable
-- Use consistent status indicators:
-  - ✅ Complete
-  - 🚧 In Progress
-  - ⏳ Not Started
-- Date format: YYYY-MM-DD
-- Clear session notes when starting a new task
-
-## After Updating
-
-Confirm the changes made and show the updated status to the user.

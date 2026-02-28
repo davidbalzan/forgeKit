@@ -7,55 +7,36 @@ argument-hint: "<phase number> <phase name>"
 
 # Plan Phase - Task Document Generator
 
-Generate a comprehensive phase task document following the ForgeKit methodology.
+Generate a phase task document with detailed, actionable tasks.
 
 ## Instructions
 
-This skill follows the 6-stage approach from `docs/phases/templates/task_template_prompt.md`:
+### Stage 1: Discovery
 
-### Stage 1: Initial Discovery & Project Scope
 - Read existing phase documentation
+- Review docs/PRODUCTION_ROADMAP.md for phase objectives
 - Understand the phase goals and context
-- Review PRODUCTION_ROADMAP.md for phase objectives
 
-### Stage 2: Deep Technical Analysis
+### Stage 2: Technical Analysis
+
 - Explore relevant codebase areas
 - Identify existing patterns to follow
-- Review ARCHITECTURE_GUIDE.md for constraints
-- Check TECH_STACK.md for technology requirements
+- Check technology requirements and constraints
 
-### Stage 3: Impact & Risk Analysis
-- Identify dependencies on other phases
-- Assess risks and mitigation strategies
-- Note potential blockers
+### Stage 3: Task Planning
 
-### Stage 4: Detailed Component Inventory
-- List all components to create/modify
-- Map to packages (client/server)
-- Identify shared types and interfaces
-
-### Stage 5: Task Planning & Sequencing
 - Break into 4-6 major tasks
-- Each task gets 3-7 sub-steps
+- Each task gets 3-7 sub-steps with checkboxes
 - Assign priorities (CRITICAL/HIGH/MEDIUM/LOW)
 - Define dependencies between tasks
 
-### Stage 6: Success Criteria & Validation
+### Stage 4: Success Criteria
+
 - Define functional success criteria
 - Define technical success criteria
 - Define quality success criteria
 
-## Template Structure
-
-Use `docs/phases/templates/TASK_TEMPLATE.md` as the base.
-
-Create files:
-- `docs/phases/phaseN/README.md` - Phase overview
-- `docs/phases/phaseN/PHASEN_TASKS.md` - Detailed tasks
-
 ## Task Format
-
-Each task should include:
 
 ```markdown
 ### Task N: [Task Name]
@@ -65,22 +46,25 @@ Each task should include:
 **Dependencies**: [Task numbers or "None"]
 
 #### Sub-tasks
+
 - [ ] N.1 [First sub-task]
 - [ ] N.2 [Second sub-task]
 - [ ] N.3 [Third sub-task]
 
 #### Deliverables
-- [What this task produces]
 
-#### Rollback Plan (if high-risk)
-- [How to revert if needed]
+- [What this task produces]
 ```
 
 ## Output
 
-1. Generate the phase README
-2. Generate the detailed tasks file
-3. Update PRODUCTION_ROADMAP.md to include the new phase
-4. Summarize what was created
+Use `docs/phases/templates/TASK_TEMPLATE.md` as the base format.
+
+Create files:
+
+- `docs/phases/phaseN/README.md` — Phase overview (from PHASE_README_TEMPLATE.md)
+- `docs/phases/phaseN/PHASEN_TASKS.md` — Detailed tasks
+
+Update `docs/PRODUCTION_ROADMAP.md` to include the new phase.
 
 Phase to plan: $ARGUMENTS

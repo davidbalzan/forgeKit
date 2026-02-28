@@ -1,31 +1,29 @@
 ---
 name: update-focus
-description: Update the Current Focus section in CURRENT_FOCUS.md with session progress
+description: Update CURRENT_FOCUS.md with session progress
 disable-model-invocation: true
 argument-hint: "[summary of what was accomplished]"
 ---
 
 # Update Focus - Session Progress Recorder
 
-Update the "Current Focus" section in `CURRENT_FOCUS.md` to capture session progress for future context.
+Update `CURRENT_FOCUS.md` to capture session progress for future context.
 
 ## Instructions
 
-1. **Read CURRENT_FOCUS.md** to understand existing state (focus on the "Current Focus" section at the top)
+1. **Read CURRENT_FOCUS.md** to understand existing state
 2. **Gather session progress** from conversation context or $ARGUMENTS
-3. **Update the Current Focus section**:
+3. **Update the file** with:
    - Phase and task (if changed)
    - Quick Context: Done, Next, Blockers
    - Last Updated date
 
-## Current Focus Section Format
+## Format
 
 ```markdown
 ## Current Focus
 
-> **Quick reference for AI assistants and team members to instantly know where work stands.**
-
-**Phase**: Phase N - [Phase Name] ([status])
+**Phase**: Phase N - [Phase Name]
 **Task**: [Current task description]
 **Branch**: `main` or feature branch
 **Last Updated**: YYYY-MM-DD
@@ -37,18 +35,10 @@ Update the "Current Focus" section in `CURRENT_FOCUS.md` to capture session prog
 - **Blockers**: [Any blockers, or "None"]
 ```
 
-## Update Guidelines
+## Guidelines
 
 - Keep entries concise and scannable
-- Use consistent status indicators:
-  - ✅ Complete
-  - 🚧 In Progress
-  - ⏳ Not Started
 - Date format: YYYY-MM-DD
-- Only update the "Current Focus" section, not the rest of the roadmap
-
-## After Updating
-
-Confirm the changes made and show the updated status to the user.
+- Only update the Current Focus section
 
 Session summary to record: $ARGUMENTS
