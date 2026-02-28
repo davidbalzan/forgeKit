@@ -22,5 +22,12 @@ Thumbs.db
 
 # IDE
 .idea/
+.vscode/settings.json
 *.swp
 *.swo
+
+# Logs
+*.log
+
+# Snapshots
+*.snap

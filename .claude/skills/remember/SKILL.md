@@ -1,6 +1,7 @@
 ---
 name: remember
 description: Capture and persist learnings globally across all projects
+disable-model-invocation: true
 argument-hint: "[category:] <learning>"
 ---
 
@@ -30,20 +31,21 @@ Persist learnings to `~/.claude/knowledge/` and sync to ForgeKit repo.
 
    If input doesn't contain `category:` prefix, analyze the content and pick the best category:
 
-   | Category | Keywords/Patterns |
-   |----------|-------------------|
-   | typescript | Zod, types, interfaces, generics, TypeScript, TS, strict mode |
-   | react | components, hooks, useState, useEffect, JSX, props, Zustand |
-   | tailwind | CSS, styling, classes, responsive, Tailwind, utility classes |
-   | testing | tests, Jest, Vitest, coverage, mocks, assertions, TDD |
-   | architecture | monorepo, feature-based, modules, structure, patterns, DDD |
-   | database | SQL, queries, Drizzle, migrations, PostgreSQL, indexes |
-   | ai | LLM, prompts, Claude, GPT, embeddings, AI providers |
-   | devops | Docker, CI/CD, deployment, pnpm, builds, infrastructure |
-   | process | git, branches, phases, workflow, ADRs, documentation |
-   | general | (fallback if no clear match) |
+   | Category     | Keywords/Patterns                                             |
+   | ------------ | ------------------------------------------------------------- |
+   | typescript   | Zod, types, interfaces, generics, TypeScript, TS, strict mode |
+   | react        | components, hooks, useState, useEffect, JSX, props, Zustand   |
+   | tailwind     | CSS, styling, classes, responsive, Tailwind, utility classes  |
+   | testing      | tests, Jest, Vitest, coverage, mocks, assertions, TDD         |
+   | architecture | monorepo, feature-based, modules, structure, patterns, DDD    |
+   | database     | SQL, queries, Drizzle, migrations, PostgreSQL, indexes        |
+   | ai           | LLM, prompts, Claude, GPT, embeddings, AI providers           |
+   | devops       | Docker, CI/CD, deployment, pnpm, builds, infrastructure       |
+   | process      | git, branches, phases, workflow, ADRs, documentation          |
+   | general      | (fallback if no clear match)                                  |
 
    **Important**: After detecting category, briefly confirm with user:
+
    > Detected category: `typescript`. Saving: "Always use Zod..."
    > [Proceed unless user objects]
 
@@ -51,24 +53,25 @@ Persist learnings to `~/.claude/knowledge/` and sync to ForgeKit repo.
    - Use detected or explicit category
    - Create new category file if it doesn't exist
 
-3. **Append to knowledge file**
+4. **Append to knowledge file**
    - File: `~/.claude/knowledge/<category>.md`
    - Format each entry with date:
+
    ```markdown
    - [2024-01-15] <learning>
    ```
 
-4. **Update the index**
+5. **Update the index**
    - Ensure `~/.claude/knowledge/README.md` lists all categories
 
-5. **Sync to forgeKit** (if configured)
-   - Copy knowledge directory to local forgeKit clone
+6. **Sync to ForgeKit** (if configured)
+   - Copy knowledge directory to local ForgeKit clone
    - Commit and push changes
-   - ForgeKit path: `~/workspace/forgeKit` (adjust if different)
+   - ForgeKit path: auto-detected via `$(git rev-parse --show-toplevel)` or `$FORGEKIT_PATH` env var
 
-6. **Confirm to user**
+7. **Confirm to user**
    - Show what was saved and where
-   - Indicate if forgeKit sync succeeded
+   - Indicate if ForgeKit sync succeeded
 
 ## Knowledge File Format
 
@@ -94,25 +97,30 @@ Accumulated knowledge about <category> from project experience.
 
 Reference these files for domain-specific learnings.
 
-| Category | File | Description |
-|----------|------|-------------|
+| Category   | File          | Description                       |
+| ---------- | ------------- | --------------------------------- |
 | typescript | typescript.md | TypeScript patterns and practices |
-| testing | testing.md | Testing strategies and tools |
+| testing    | testing.md    | Testing strategies and tools      |
 ```
 
 ## ForgeKit Sync
 
-After saving locally, sync to forgeKit:
+After saving locally, sync to ForgeKit if inside the repo:
 
 ```bash
-# Copy knowledge to forgeKit
-cp -r ~/.claude/knowledge ~/workspace/forgeKit/.claude/
+# Detect repo root (works from any subdirectory)
+FORGEKIT_ROOT="${FORGEKIT_PATH:-$(git rev-parse --show-toplevel 2>/dev/null)}"
 
-# Commit and push
-cd ~/workspace/forgeKit
-git add .claude/knowledge
-git commit -m "knowledge: Update from $(hostname)"
-git push
+if [ -n "$FORGEKIT_ROOT" ]; then
+  # Copy knowledge to ForgeKit
+  cp -r ~/.claude/knowledge "$FORGEKIT_ROOT/.claude/"
+
+  # Commit and push
+  cd "$FORGEKIT_ROOT"
+  git add .claude/knowledge
+  git commit -m "knowledge: Update from $(hostname)"
+  git push
+fi
 ```
 
 ## Input to process

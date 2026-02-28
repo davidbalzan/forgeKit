@@ -31,17 +31,22 @@ The workflow works across **Claude Code**, **Cursor**, and **VS Code Copilot** �
 ### Setup
 
 ```bash
-# 1. Clone and install
+# 1. Create your repo from the template
+#    On GitHub: click "Use this template" → "Create a new repository"
+#    Then clone your new repo:
 git clone <your-repo-url>
 cd forgekit
 pnpm install
 
-# 2. Start development servers
+# 2. Set up environment variables
+cp .env.example .env
+
+# 3. Start development servers
 pnpm dev
 # Frontend → http://localhost:5173
 # API      → http://localhost:3000
 
-# 3. (Optional) Start PostgreSQL
+# 4. (Optional) Start PostgreSQL
 docker compose up -d
 # Database → localhost:5432 (user: postgres, password: postgres)
 ```
@@ -53,7 +58,13 @@ docker compose up -d
 
 ### Start Building Your Project
 
-Once running, use the AI workflow to initialize your project:
+The AI workflow requires an AI coding assistant. Install at least one of:
+
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (terminal)
+- [Cursor](https://cursor.com/) (IDE)
+- [VS Code](https://code.visualstudio.com/) with GitHub Copilot
+
+Then initialize your project:
 
 ```
 /kickstart "My Project Name"
@@ -130,18 +141,18 @@ forgekit/
 
 ### Tech Stack
 
-| Layer | Technology | Version | What It Does |
-|-------|-----------|---------|-------------|
-| **Frontend** | React | 19.x | UI framework with concurrent rendering |
-| **Build** | Vite | 6.x | Dev server with HMR, ESM-native bundling |
-| **Styling** | Tailwind CSS | 4.x | Utility-first CSS with design token support |
-| **Icons** | Lucide React | latest | Tree-shakeable icon library |
-| **Backend** | Hono | 4.x | Lightweight, TypeScript-first web framework |
-| **Runtime** | Node.js | 22+ | Server runtime via @hono/node-server |
-| **Database** | PostgreSQL | 17 | Relational database (via Docker) |
-| **Language** | TypeScript | 5.x | Strict mode across all packages |
-| **Package Manager** | pnpm | 10.x | Fast, disk-efficient with workspace support |
-| **Monorepo** | Turborepo | 2.x | Build orchestration with content-hash caching |
+| Layer               | Technology   | Version | What It Does                                  |
+| ------------------- | ------------ | ------- | --------------------------------------------- |
+| **Frontend**        | React        | 19.x    | UI framework with concurrent rendering        |
+| **Build**           | Vite         | 6.x     | Dev server with HMR, ESM-native bundling      |
+| **Styling**         | Tailwind CSS | 4.x     | Utility-first CSS with design token support   |
+| **Icons**           | Lucide React | latest  | Tree-shakeable icon library                   |
+| **Backend**         | Hono         | 4.x     | Lightweight, TypeScript-first web framework   |
+| **Runtime**         | Node.js      | 22+     | Server runtime via @hono/node-server          |
+| **Database**        | PostgreSQL   | 17      | Relational database (via Docker)              |
+| **Language**        | TypeScript   | 5.x     | Strict mode across all packages               |
+| **Package Manager** | pnpm         | 10.x    | Fast, disk-efficient with workspace support   |
+| **Monorepo**        | Turborepo    | 2.x     | Build orchestration with content-hash caching |
 
 ### Available Scripts
 
@@ -150,6 +161,7 @@ pnpm dev          # Start all apps in development mode (web + api in parallel)
 pnpm build        # Build all packages and apps for production
 pnpm lint         # Run ESLint across all workspaces
 pnpm typecheck    # TypeScript type checking (no emit)
+pnpm test         # Run tests via Vitest
 pnpm format       # Format code with Prettier
 pnpm clean        # Clean all build artifacts (.turbo, dist)
 ```
@@ -185,36 +197,36 @@ The workflow layer is what makes ForgeKit more than a starter template. It gives
 
 These skills work as slash commands in Claude Code, Cursor, and VS Code Copilot. See [docs/COMMANDS.md](./docs/COMMANDS.md) for detailed usage with examples.
 
-| Skill | What It Does | When to Use |
-|-------|-------------|-------------|
-| `/kickstart` | Walks you through project setup. Generates TECH_STACK, ARCHITECTURE_GUIDE, DESIGN_SYSTEM, PRODUCTION_ROADMAP, DECISIONS, and phase structure — all from templates in `docs/templates/`. | Once, when starting a new project |
-| `/create-prd` | Guided Product Requirements Document creation with personas, user stories, acceptance criteria, and risk analysis. | Before development begins |
-| `/plan-phase` | Analyzes your codebase and creates a detailed task breakdown (4-6 tasks with sub-steps, dependencies, rollback plans) for a development phase. | When starting each new phase |
-| `/start-session` | Reads CURRENT_FOCUS, recent decisions, and phase progress. Gives you a summary of where you left off and what to do next. | Every coding session |
-| `/check-task` | Marks tasks and sub-tasks complete in the phase task document. Updates progress stats. | After completing work items |
-| `/update-focus` | Updates CURRENT_FOCUS.md with what you're working on, blockers, and session notes. | End of each session |
-| `/log-decision` | Creates a structured Architectural Decision Record (ADR) in DECISIONS.md with context, rationale, alternatives, and consequences. | After making tech choices |
-| `/phase-status` | Calculates progress percentages, lists completed/remaining tasks, identifies blockers. | Sprint planning, check-ins |
-| `/remember` | Captures a learning into the persistent knowledge base (`.claude/knowledge/`). Learnings persist across sessions and projects. | When you discover a useful pattern |
-| `/distill` | Converts an informal learning from the knowledge base into a formal ADR in DECISIONS.md. | When a pattern becomes a project standard |
-| `/cleanup` | Resets the project to clean template state — removes generated docs, preserves templates and infrastructure. Ready for `/kickstart` again. | When reusing the template |
+| Skill            | What It Does                                                                                                                                                                            | When to Use                               |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| `/kickstart`     | Walks you through project setup. Generates TECH_STACK, ARCHITECTURE_GUIDE, DESIGN_SYSTEM, PRODUCTION_ROADMAP, DECISIONS, and phase structure — all from templates in `docs/templates/`. | Once, when starting a new project         |
+| `/create-prd`    | Guided Product Requirements Document creation with personas, user stories, acceptance criteria, and risk analysis.                                                                      | Before development begins                 |
+| `/plan-phase`    | Analyzes your codebase and creates a detailed task breakdown (4-6 tasks with sub-steps, dependencies, rollback plans) for a development phase.                                          | When starting each new phase              |
+| `/start-session` | Reads CURRENT_FOCUS, recent decisions, and phase progress. Gives you a summary of where you left off and what to do next.                                                               | Every coding session                      |
+| `/check-task`    | Marks tasks and sub-tasks complete in the phase task document. Updates progress stats.                                                                                                  | After completing work items               |
+| `/update-focus`  | Updates CURRENT_FOCUS.md with what you're working on, blockers, and session notes.                                                                                                      | End of each session                       |
+| `/log-decision`  | Creates a structured Architectural Decision Record (ADR) in DECISIONS.md with context, rationale, alternatives, and consequences.                                                       | After making tech choices                 |
+| `/phase-status`  | Calculates progress percentages, lists completed/remaining tasks, identifies blockers.                                                                                                  | Sprint planning, check-ins                |
+| `/remember`      | Captures a learning into the persistent knowledge base (`.claude/knowledge/`). Learnings persist across sessions and projects.                                                          | When you discover a useful pattern        |
+| `/distill`       | Converts an informal learning from the knowledge base into a formal ADR in DECISIONS.md.                                                                                                | When a pattern becomes a project standard |
+| `/cleanup`       | Resets the project to clean template state — removes generated docs, preserves templates and infrastructure. Ready for `/kickstart` again.                                              | When reusing the template                 |
 
 ### Knowledge Base
 
 The `.claude/knowledge/` directory contains persistent learnings organized by domain:
 
-| File | Covers |
-|------|--------|
-| `general.md` | General development practices |
-| `typescript.md` | TypeScript patterns and strict mode practices |
-| `react.md` | React component patterns and hooks |
-| `tailwind.md` | Tailwind CSS styling patterns |
-| `testing.md` | Testing strategies and tools |
-| `architecture.md` | System design, monorepo patterns |
-| `database.md` | Database patterns, migrations, queries |
-| `ai.md` | AI integration and prompt patterns |
-| `devops.md` | Deployment, CI/CD, infrastructure |
-| `process.md` | Development workflow and methodology |
+| File              | Covers                                        |
+| ----------------- | --------------------------------------------- |
+| `general.md`      | General development practices                 |
+| `typescript.md`   | TypeScript patterns and strict mode practices |
+| `react.md`        | React component patterns and hooks            |
+| `tailwind.md`     | Tailwind CSS styling patterns                 |
+| `testing.md`      | Testing strategies and tools                  |
+| `architecture.md` | System design, monorepo patterns              |
+| `database.md`     | Database patterns, migrations, queries        |
+| `ai.md`           | AI integration and prompt patterns            |
+| `devops.md`       | Deployment, CI/CD, infrastructure             |
+| `process.md`      | Development workflow and methodology          |
 
 These files are updated via `/remember` and read by `/start-session`. They give your AI assistant accumulated wisdom that persists across sessions.
 
@@ -222,16 +234,16 @@ These files are updated via `/remember` and read by `/start-session`. They give 
 
 The `/kickstart` skill generates project documentation from structured templates in `docs/templates/`. Each template has rich guided placeholders that tell you (and the AI) exactly what information belongs in each section:
 
-| Template | Generates | Purpose |
-|----------|-----------|---------|
-| `TECH_STACK_TEMPLATE.md` | `docs/TECH_STACK.md` | Technology choices with versions, rationale, and upgrade paths |
-| `ARCHITECTURE_GUIDE_TEMPLATE.md` | `docs/ARCHITECTURE_GUIDE.md` | System design, directory structure, decision rationale, best practices |
-| `PRODUCTION_ROADMAP_TEMPLATE.md` | `docs/PRODUCTION_ROADMAP.md` | Phase overview, current state assessment, success metrics |
-| `DESIGN_SYSTEM_TEMPLATE.md` | `docs/DESIGN_SYSTEM.md` | Colors, typography, spacing, component patterns, accessibility |
-| `PHASES_README_TEMPLATE.md` | `docs/phases/README.md` | Phase navigation, cross-phase dependencies, progress tracking |
-| `PHASE_README_TEMPLATE.md` | `docs/phases/phase[N]/README.md` | Individual phase goals, deliverables, success criteria |
-| `PRD_TEMPLATE.md` | `docs/PRD.md` | Product requirements, personas, user stories |
-| `TASK_TEMPLATE.md` | `docs/phases/phase[N]/PHASE[N]_TASKS.md` | Detailed task breakdown with sub-steps and rollback plans |
+| Template                         | Generates                                | Purpose                                                                |
+| -------------------------------- | ---------------------------------------- | ---------------------------------------------------------------------- |
+| `TECH_STACK_TEMPLATE.md`         | `docs/TECH_STACK.md`                     | Technology choices with versions, rationale, and upgrade paths         |
+| `ARCHITECTURE_GUIDE_TEMPLATE.md` | `docs/ARCHITECTURE_GUIDE.md`             | System design, directory structure, decision rationale, best practices |
+| `PRODUCTION_ROADMAP_TEMPLATE.md` | `docs/PRODUCTION_ROADMAP.md`             | Phase overview, current state assessment, success metrics              |
+| `DESIGN_SYSTEM_TEMPLATE.md`      | `docs/DESIGN_SYSTEM.md`                  | Colors, typography, spacing, component patterns, accessibility         |
+| `PHASES_README_TEMPLATE.md`      | `docs/phases/README.md`                  | Phase navigation, cross-phase dependencies, progress tracking          |
+| `PHASE_README_TEMPLATE.md`       | `docs/phases/phase[N]/README.md`         | Individual phase goals, deliverables, success criteria                 |
+| `PRD_TEMPLATE.md`                | `docs/PRD.md`                            | Product requirements, personas, user stories                           |
+| `TASK_TEMPLATE.md`               | `docs/phases/phase[N]/PHASE[N]_TASKS.md` | Detailed task breakdown with sub-steps and rollback plans              |
 
 ---
 
@@ -240,6 +252,7 @@ The `/kickstart` skill generates project documentation from structured templates
 ### 1. Rename the project
 
 Update these locations:
+
 - `package.json` → `name` field
 - `packages/shared/src/constants.ts` → `APP_NAME`
 - `apps/web/index.html` → `<title>` tag
@@ -285,13 +298,14 @@ These persist in `.claude/knowledge/` and get loaded every session via `/start-s
 
 The same workflow is available across three IDEs. Skills are kept in sync — they share the same structure and reference the same templates.
 
-| IDE | Skill Location | How to Invoke |
-|-----|---------------|---------------|
-| **Claude Code** | `.claude/skills/[name]/SKILL.md` | Type `/skillname` in the terminal |
-| **Cursor** | `.cursor/commands/[name].md` | Type `/` in Agent chat (Cmd+L) |
+| IDE                 | Skill Location                     | How to Invoke                          |
+| ------------------- | ---------------------------------- | -------------------------------------- |
+| **Claude Code**     | `.claude/skills/[name]/SKILL.md`   | Type `/skillname` in the terminal      |
+| **Cursor**          | `.cursor/commands/[name].md`       | Type `/` in Agent chat (Cmd+L)         |
 | **VS Code Copilot** | `.vscode/prompts/[name].prompt.md` | Copilot Chat → paperclip icon → Prompt |
 
 System-level instructions are also configured:
+
 - `.cursorrules` — Cursor system prompt (references project docs and conventions)
 - `.github/copilot-instructions.md` — GitHub Copilot system prompt
 - `.claude/CLAUDE.md` — Claude Code project instructions
@@ -302,12 +316,12 @@ See [docs/COMMANDS.md](./docs/COMMANDS.md) for detailed per-IDE usage instructio
 
 ## Key Documents
 
-| Document | What It Is |
-|----------|-----------|
+| Document                                             | What It Is                                                                                                         |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | [FORGEKIT_METHODOLOGY.md](./FORGEKIT_METHODOLOGY.md) | The complete methodology — philosophy, document structure, workflow patterns, and examples for every document type |
-| [docs/COMMANDS.md](./docs/COMMANDS.md) | Detailed guide for every AI skill with examples, expected output, and troubleshooting |
-| [CURRENT_FOCUS.md](./CURRENT_FOCUS.md) | Live document showing what's actively being worked on — read by `/start-session` |
-| [docs/DECISIONS.md](./docs/DECISIONS.md) | Architectural Decision Records — consulted before any technology or design choice |
+| [docs/COMMANDS.md](./docs/COMMANDS.md)               | Detailed guide for every AI skill with examples, expected output, and troubleshooting                              |
+| [CURRENT_FOCUS.md](./CURRENT_FOCUS.md)               | Live document showing what's actively being worked on — read by `/start-session`                                   |
+| [docs/DECISIONS.md](./docs/DECISIONS.md)             | Architectural Decision Records — consulted before any technology or design choice                                  |
 
 ---
 
