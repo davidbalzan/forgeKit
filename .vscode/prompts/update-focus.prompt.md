@@ -1,22 +1,26 @@
 ---
 mode: edit
-description: Update CURRENT_FOCUS.md with session progress
+description: Update docs/CURRENT_FOCUS.md with session progress
 ---
 
 # Update Focus - Session Progress Recorder
 
-Update CURRENT_FOCUS.md to capture session progress for future context.
+Update docs/CURRENT_FOCUS.md to capture session progress for future context.
+
+## Obsidian Format (Required)
+
+`docs/CURRENT_FOCUS.md` has YAML frontmatter — preserve it. Use `[[wikilinks]]` when referencing other docs in session notes (e.g. `[[DECISIONS#adr-005|ADR-005]]`, `[[phase2/README|Phase 2]]`).
 
 ## Instructions
 
-1. **Read CURRENT_FOCUS.md** to understand existing state
+1. **Read docs/CURRENT_FOCUS.md** to understand existing state
 2. **Gather session progress** from conversation context
 3. **Update the file** with:
    - Phase and task (if changed)
    - Quick Context: Done, Next, Blockers
    - Last Updated date
 
-## CURRENT_FOCUS.md Format
+## docs/CURRENT_FOCUS.md Format
 
 ```markdown
 # Current Focus

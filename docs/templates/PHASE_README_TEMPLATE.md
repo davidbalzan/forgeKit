@@ -1,3 +1,9 @@
+---
+title: "Phase README Template"
+tags: [forgekit/template]
+aliases: []
+---
+
 # Phase [N]: [Phase Name]
 
 **Duration**: [X] weeks — [Brief justification for estimate, e.g., "3 sprints based on task complexity analysis"]
@@ -31,6 +37,7 @@
 ## 🎯 Key Deliverables
 
 ### Sprint 1: [Sprint Name — e.g., "Setup & Foundation"] (Week [X])
+
 > [Sprint goal — one sentence describing what this sprint achieves]
 
 - [🟢 Complete / 🟡 In Progress / ⚪ Pending / 🔴 Blocked] **[Deliverable name]** — [What this delivers and how to verify it, e.g., "Database schema with migration scripts. Verified by running migrations on clean database and seeding test data."]
@@ -38,12 +45,14 @@
 - [Status] **[Deliverable name]** — [What this delivers and verification method]
 
 ### Sprint 2: [Sprint Name — e.g., "Core Implementation"] (Week [X])
+
 > [Sprint goal]
 
 - [Status] **[Deliverable name]** — [Description and verification]
 - [Status] **[Deliverable name]** — [Description and verification]
 
 ### Sprint 3: [Sprint Name — e.g., "Integration & Testing"] (Week [X]-[Y])
+
 > [Sprint goal]
 
 - [Status] **[Deliverable name]** — [Description and verification]
@@ -56,17 +65,20 @@
 > All criteria must be met before this phase is considered complete. Use these as a checklist during phase review.
 
 ### Functional Requirements
+
 - [ ] [Requirement with testable condition — e.g., "User can sign up with email/password, receives confirmation, and can log in with those credentials"]
 - [ ] [Requirement with testable condition — e.g., "Protected API endpoints return 401 for unauthenticated requests and 200 with valid JWT"]
 - [ ] [Requirement with testable condition — e.g., "Dashboard page loads and displays real data from the database within 2 seconds"]
 
 ### Quality Requirements
+
 - [ ] [Quality gate with measurable threshold — e.g., "Test coverage >= 70% for all new code (measured by coverage tool)"]
 - [ ] [Quality gate — e.g., "Zero TypeScript errors: `pnpm typecheck` passes across all packages"]
 - [ ] [Quality gate — e.g., "Zero linting errors: `pnpm lint` passes with no warnings"]
 - [ ] [Quality gate — e.g., "All API endpoints return proper error responses (not 500s) for invalid input"]
 
 ### Architecture Requirements
+
 - [ ] [Architecture validation — e.g., "All new code follows feature-based organization as defined in ARCHITECTURE_GUIDE.md"]
 - [ ] [Architecture validation — e.g., "No direct database access from route handlers — all queries go through service layer"]
 - [ ] [Architecture validation — e.g., "Shared types used for all API request/response types — no inline type definitions"]
@@ -75,11 +87,11 @@
 
 ## ⚠️ Risks & Mitigation
 
-| Risk | Impact | Likelihood | Mitigation Strategy |
-|------|--------|------------|---------------------|
-| [Specific risk — e.g., "Database schema needs revision mid-phase"] | [🔴 High / 🟡 Medium / 🟢 Low — explain impact, e.g., "Cascading changes to API and frontend"] | [🔴 High / 🟡 Medium / 🟢 Low] | [Concrete mitigation — e.g., "Start with minimal schema, use migrations for all changes, avoid premature optimization of queries"] |
-| [Specific risk — e.g., "Third-party auth library has breaking changes"] | [Impact and explanation] | [Likelihood] | [Mitigation — e.g., "Pin dependency version, test upgrade path before adopting, have fallback auth implementation"] |
-| [Specific risk — e.g., "Scope creep from discovered requirements"] | [Impact and explanation] | [Likelihood] | [Mitigation — e.g., "Strict scope boundary: anything not in deliverables list goes to Phase N+1 backlog"] |
+| Risk                                                                    | Impact                                                                                         | Likelihood                     | Mitigation Strategy                                                                                                                |
+| ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| [Specific risk — e.g., "Database schema needs revision mid-phase"]      | [🔴 High / 🟡 Medium / 🟢 Low — explain impact, e.g., "Cascading changes to API and frontend"] | [🔴 High / 🟡 Medium / 🟢 Low] | [Concrete mitigation — e.g., "Start with minimal schema, use migrations for all changes, avoid premature optimization of queries"] |
+| [Specific risk — e.g., "Third-party auth library has breaking changes"] | [Impact and explanation]                                                                       | [Likelihood]                   | [Mitigation — e.g., "Pin dependency version, test upgrade path before adopting, have fallback auth implementation"]                |
+| [Specific risk — e.g., "Scope creep from discovered requirements"]      | [Impact and explanation]                                                                       | [Likelihood]                   | [Mitigation — e.g., "Strict scope boundary: anything not in deliverables list goes to Phase N+1 backlog"]                          |
 
 ---
 
@@ -90,6 +102,7 @@
 - **Optional (nice to have)**: [Nice-to-have prerequisites that improve efficiency — e.g., "CI/CD pipeline: not required but speeds up validation" or "Design mockups: can start with wireframes and refine later"]
 
 ### External Dependencies
+
 - [External dependency — e.g., "Database provisioning: PostgreSQL instance must be available (Docker Compose handles this locally)"]
 - [External dependency — e.g., "API keys: any third-party service credentials must be obtained and added to .env"]
 
@@ -115,11 +128,12 @@ cat CURRENT_FOCUS.md
 ```
 
 ### Before Starting Checklist
+
 - [ ] Read this README fully — understand the goal, deliverables, and success criteria
-- [ ] Read the detailed task plan (PHASE[N]_TASKS.md) — understand the full scope
+- [ ] Read the detailed task plan (PHASE[N]\_TASKS.md) — understand the full scope
 - [ ] Ensure all **Required** dependencies are met
 - [ ] Confirm development environment is working (`pnpm dev` starts without errors)
-- [ ] Review relevant ADRs in `docs/DECISIONS.md` that affect this phase
+- [ ] Review relevant ADRs in [[DECISIONS]] that affect this phase
 
 ---
 

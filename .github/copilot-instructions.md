@@ -18,19 +18,19 @@ project-root/
 │   ├── TECH_STACK.md          ← Technology choices
 │   ├── ARCHITECTURE_GUIDE.md  ← System design rationale
 │   └── phases/                ← Phase-based task planning
-└── CURRENT_FOCUS.md          ← Quick session context
+└── docs/CURRENT_FOCUS.md          ← Quick session context
 ```
 
 ## Key Documents to Read First
 
-1. **CURRENT_FOCUS.md** - What's actively being worked on
+1. **docs/CURRENT_FOCUS.md** - What's actively being worked on
 2. **docs/PRODUCTION_ROADMAP.md** - Overall project status
 3. **docs/phases/phaseN/PHASEN_TASKS.md** - Detailed task breakdowns
 
 ## Status Indicators
 
 - ✅ Complete
-- 🚧 In Progress  
+- 🚧 In Progress
 - ⏳ Not Started
 - 🔴 Critical Priority
 - 🟡 Medium Priority
@@ -45,7 +45,7 @@ project-root/
 
 ## When Working on Tasks
 
-1. Check CURRENT_FOCUS.md for active work
+1. Check docs/CURRENT_FOCUS.md for active work
 2. Find the task in the relevant phase TASKS file
 3. Update checkboxes as you complete sub-tasks
 4. Update progress metrics when tasks complete

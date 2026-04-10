@@ -5,35 +5,39 @@ These prompts are the **VS Code Copilot equivalent** of Claude Code skills and C
 ## How to Use in VS Code Copilot
 
 ### Method 1: Prompt Picker (Recommended)
+
 1. Open Copilot Chat (Ctrl+Shift+I / Cmd+Shift+I)
 2. Click the **paperclip icon** or type `/`
 3. Select **"Prompt..."** from the menu
 4. Choose the prompt you want to use
 
 ### Method 2: Direct Reference
+
 In Copilot Chat, you can reference files:
+
 ```
 #file:.vscode/prompts/start-session.prompt.md
 Follow this prompt to load my session context
 ```
 
 ### Method 3: Keyboard Shortcut
+
 1. Set up keybindings for frequently used prompts
 2. Use `Cmd+K Cmd+P` (or your custom binding) to open prompt picker
 
 ## Available Prompts
 
-| Prompt | Mode | Purpose | When to Use |
-|--------|------|---------|-------------|
-| `kickstart.prompt.md` | edit | Initialize project structure | Starting a brand new project |
-| `create-prd.prompt.md` | edit | Generate a PRD | Defining product requirements |
-| `start-session.prompt.md` | ask | Load project context | Start of each coding session |
-| `log-decision.prompt.md` | edit | Create an ADR | After making architectural decisions |
-| `plan-phase.prompt.md` | edit | Generate phase docs | Starting a new project phase |
-| `update-focus.prompt.md` | edit | Update CURRENT_FOCUS.md | End of session or after major progress |
-| `check-task.prompt.md` | edit | Mark tasks complete | After completing a task |
-| `phase-status.prompt.md` | ask | View phase progress | Checking overall progress |
-| `cleanup.prompt.md` | edit | Reset to template state | Reusing template for new project |
+| Prompt                    | Mode | Purpose                      | When to Use                            |
+| ------------------------- | ---- | ---------------------------- | -------------------------------------- |
+| `kickstart.prompt.md`     | edit | Initialize project structure | Starting a brand new project           |
+| `create-prd.prompt.md`    | edit | Generate a PRD               | Defining product requirements          |
+| `start-session.prompt.md` | ask  | Load project context         | Start of each coding session           |
+| `log-decision.prompt.md`  | edit | Create an ADR                | After making architectural decisions   |
+| `plan-phase.prompt.md`    | edit | Generate phase docs          | Starting a new project phase           |
+| `update-focus.prompt.md`  | edit | Update docs/CURRENT_FOCUS.md | End of session or after major progress |
+| `check-task.prompt.md`    | edit | Mark tasks complete          | After completing a task                |
+| `phase-status.prompt.md`  | ask  | View phase progress          | Checking overall progress              |
+| `cleanup.prompt.md`       | edit | Reset to template state      | Reusing template for new project       |
 
 ## Prompt Modes
 
@@ -70,13 +74,13 @@ Open prompt picker → cleanup → "reset project for reuse"
 
 ## Comparison: Claude Code vs Cursor vs VS Code Copilot
 
-| Claude Code | Cursor | VS Code Copilot |
-|-------------|--------|-----------------|
-| `/start-session` | `@start-session.md` | Prompt picker → `start-session` |
-| Slash commands | @ file reference | Prompt files + picker |
-| `$ARGUMENTS` variable | Natural language | Natural language in chat |
-| `.claude/skills/` | `.cursor/prompts/` | `.vscode/prompts/` |
-| `SKILL.md` files | `.md` files | `.prompt.md` files |
+| Claude Code           | Cursor              | VS Code Copilot                 |
+| --------------------- | ------------------- | ------------------------------- |
+| `/start-session`      | `@start-session.md` | Prompt picker → `start-session` |
+| Slash commands        | @ file reference    | Prompt files + picker           |
+| `$ARGUMENTS` variable | Natural language    | Natural language in chat        |
+| `.claude/skills/`     | `.cursor/prompts/`  | `.vscode/prompts/`              |
+| `SKILL.md` files      | `.md` files         | `.prompt.md` files              |
 
 ## Global Instructions
 

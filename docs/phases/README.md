@@ -1,9 +1,16 @@
+---
+title: "Phases Overview"
+tags: [forgekit/phase]
+aliases: ["Phases"]
+---
+
 # Development Phases
 
 ## Phase Organization
 
 Each phase has its own folder with:
-- `README.md` — Phase overview and quick reference
+
+- [[README]] — Phase overview and quick reference
 - `PHASEN_TASKS.md` — Detailed task breakdown with checklists
 
 Use `/plan-phase` to generate a new phase.
@@ -21,6 +28,7 @@ See `templates/` for phase document templates.
 ## Documentation Standards
 
 Each phase follows the same structure:
+
 - Clear overview with goals and deliverables
 - Detailed task breakdown with checkboxes
 - Code examples and implementation patterns

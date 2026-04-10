@@ -1,20 +1,24 @@
 # Update Focus - Current Work Tracker
 
-**Objective**: Update `CURRENT_FOCUS.md` to reflect current work state.
+**Objective**: Update `docs/CURRENT_FOCUS.md` to reflect current work state.
 
 **Requirements**:
-- Read current `CURRENT_FOCUS.md` first
+
+- Read current `docs/CURRENT_FOCUS.md` first
 - Update all relevant sections
 - Set the "Last Updated" timestamp
 - Clear session notes if moving to a new task
 
+**Obsidian format (required)**: `docs/CURRENT_FOCUS.md` has YAML frontmatter — preserve it. Use `[[wikilinks]]` when referencing other docs in session notes (e.g. `[[DECISIONS#adr-005|ADR-005]]`, `[[phase2/README|Phase 2]]`).
+
 ## File Location
 
-`CURRENT_FOCUS.md` at project root.
+`docs/CURRENT_FOCUS.md`
 
 ## Sections to Update
 
 ### Active Work
+
 ```markdown
 **Phase**: Phase N - [Name]
 **Task**: Task N.X - [Task Name]
@@ -23,6 +27,7 @@
 ```
 
 ### Quick Context
+
 ```markdown
 **What we're doing**: [Current activity]
 **Why**: [Reason/goal]
@@ -31,12 +36,14 @@
 ```
 
 ### Key Files
+
 ```markdown
 - Task details: `docs/phases/phaseN/PHASEN_TASKS.md`
 - Phase overview: `docs/phases/phaseN/README.md`
 ```
 
 ### Session Notes
+
 ```markdown
 - [x] [Completed item]
 - [ ] [Pending item]
@@ -45,6 +52,7 @@
 Clear these notes when starting a new task.
 
 ### Last Updated
+
 ```markdown
 **Date**: YYYY-MM-DD
 **Status**: 🚧 In Progress | ✅ Complete | ⏸️ Paused
@@ -57,4 +65,4 @@ Clear these notes when starting a new task.
 - When encountering or resolving blockers
 - End of session (capture progress)
 
-**Output**: Updated `CURRENT_FOCUS.md` with current state.
+**Output**: Updated `docs/CURRENT_FOCUS.md` with current state.

@@ -3,10 +3,13 @@
 **Objective**: Generate a comprehensive phase task document following the ForgeKit methodology.
 
 **Requirements**:
+
 - Follow the 6-stage approach below
 - Use templates from `docs/phases/templates/`
 - Create specific, actionable tasks with checkboxes
 - Include risk assessment and rollback plans for complex tasks
+
+**Obsidian format (required)**: Generated phase files (`docs/phases/phaseN/README.md` and `PHASEN_TASKS.md`) must start with YAML frontmatter (`title`, `tags: [forgekit/phase]`, `aliases`) and use `[[wikilinks]]` when referencing `[[PRODUCTION_ROADMAP]]`, `[[ARCHITECTURE_GUIDE]]`, `[[CURRENT_FOCUS]]`, `[[DECISIONS]]`, etc.
 
 ## Stage 1: Initial Discovery
 
@@ -50,25 +53,30 @@
 **Dependencies**: [Task numbers or "None"]
 
 #### Sub-tasks
+
 - [ ] N.1 [First sub-task]
 - [ ] N.2 [Second sub-task]
 - [ ] N.3 [Third sub-task]
 
 #### Deliverables
+
 - [What this task produces]
 
 #### Rollback Plan (if high-risk)
+
 - [How to revert if needed]
 ```
 
 ## Stage 6: Success Criteria
 
 Define:
+
 - Functional success criteria
 - Technical success criteria
 - Quality success criteria (test coverage, performance)
 
 **Output**:
+
 1. `docs/phases/phaseN/README.md` - Phase overview
 2. `docs/phases/phaseN/PHASEN_TASKS.md` - Detailed task breakdown
 3. Update `docs/PRODUCTION_ROADMAP.md` with new phase

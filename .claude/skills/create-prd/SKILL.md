@@ -9,6 +9,21 @@ argument-hint: "<product name or idea>"
 
 Generate a comprehensive PRD through a structured discovery process. This skill guides you through requirements gathering and produces a production-ready PRD document.
 
+## Obsidian Format (Required)
+
+The generated PRD lives in the `docs/` Obsidian vault. The file MUST:
+
+1. **Start with YAML frontmatter:**
+   ```yaml
+   ---
+   title: "PRD: [Product Name]"
+   tags: [forgekit/reference, forgekit/prd]
+   aliases: ["PRD", "[Product Name] PRD"]
+   ---
+   ```
+2. **Use `[[wikilinks]]` for all cross-references** to other docs (e.g. `[[TECH_STACK]]`, `[[ARCHITECTURE_GUIDE]]`, `[[DECISIONS]]`).
+3. **Copy from `docs/templates/PRD_TEMPLATE.md`** which already has the correct structure — just update the frontmatter `title` and `aliases` to match the actual product.
+
 ## Instructions
 
 This skill follows a 6-stage discovery process to build a complete PRD.
@@ -16,12 +31,14 @@ This skill follows a 6-stage discovery process to build a complete PRD.
 ### Stage 1: Problem Discovery
 
 Ask the user about:
+
 1. **What problem are you solving?** - Get specific, concrete examples
 2. **Who experiences this problem?** - Identify user personas
 3. **How do they solve it today?** - Current workarounds and pain points
 4. **Why does this matter now?** - Business context and urgency
 
 Capture:
+
 - Problem statement (concrete, measurable)
 - Affected user segments
 - Current alternatives/competitors
@@ -30,12 +47,14 @@ Capture:
 ### Stage 2: Vision & Goals
 
 Ask the user about:
+
 1. **What does success look like?** - The ideal outcome
 2. **How will you measure success?** - Specific metrics and targets
 3. **What are you NOT building?** - Explicit scope boundaries
 4. **What's the timeline?** - Key dates and constraints
 
 Capture:
+
 - Product vision statement
 - 3-5 measurable goals with targets
 - Non-goals / out of scope items
@@ -44,16 +63,19 @@ Capture:
 ### Stage 3: User Requirements
 
 For each persona identified:
+
 1. **What are their goals?** - What they're trying to achieve
 2. **What are their pain points?** - Current frustrations
 3. **What's their technical level?** - Expertise and expectations
 
 Then generate user stories in format:
+
 ```
 As a [persona], I want to [action] so that [benefit]
 ```
 
 Prioritize using MoSCoW:
+
 - **Must Have**: Core functionality, MVP blockers
 - **Should Have**: Important but not critical
 - **Could Have**: Nice to have, enhances experience
@@ -62,6 +84,7 @@ Prioritize using MoSCoW:
 ### Stage 4: Functional Requirements
 
 For each Must Have user story:
+
 1. **Break into features** - Discrete pieces of functionality
 2. **Define acceptance criteria** - Specific, testable conditions
 3. **Map user flows** - Step-by-step interactions
@@ -70,6 +93,7 @@ For each Must Have user story:
 ### Stage 5: Non-Functional & Technical Requirements
 
 Ask about:
+
 1. **Performance expectations** - Response times, concurrent users
 2. **Security requirements** - Auth, data protection, compliance
 3. **Scalability needs** - Initial scale, growth projections
@@ -79,12 +103,14 @@ Ask about:
 ### Stage 6: Risks & Planning
 
 Identify:
+
 1. **Technical risks** - Complexity, unknowns
 2. **Business risks** - Market, timeline, resources
 3. **Dependencies** - External factors
 4. **Assumptions** - What we're taking for granted
 
 Create:
+
 - Risk matrix with mitigations
 - High-level phase breakdown
 - Key milestones
@@ -121,6 +147,7 @@ Save the completed PRD to: `docs/PRD.md` (or `docs/PRD_[ProductName].md` if spec
 ## Related Skills
 
 After completing the PRD, use:
+
 - `/plan-phase` - Break down into implementation phases
 - `/log-decision` - Record key technical decisions as ADRs
 

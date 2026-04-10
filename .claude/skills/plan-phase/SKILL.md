@@ -9,38 +9,67 @@ argument-hint: "<phase number> <phase name>"
 
 Generate a comprehensive phase task document following the ForgeKit methodology.
 
+## Obsidian Format (Required)
+
+Generated phase docs live in the `docs/` Obsidian vault. Both files MUST:
+
+1. **Start with YAML frontmatter.** For `docs/phases/phaseN/README.md`:
+   ```yaml
+   ---
+   title: "Phase N: [Name]"
+   tags: [forgekit/phase]
+   aliases: ["Phase N"]
+   ---
+   ```
+   For `docs/phases/phaseN/PHASEN_TASKS.md`:
+   ```yaml
+   ---
+   title: "Phase N Tasks"
+   tags: [forgekit/phase, forgekit/tasks]
+   aliases: ["Phase N Tasks"]
+   ---
+   ```
+2. **Use `[[wikilinks]]` for cross-references.** Link back to `[[PRODUCTION_ROADMAP]]`, `[[ARCHITECTURE_GUIDE]]`, `[[TECH_STACK]]`, `[[DECISIONS]]`, `[[CURRENT_FOCUS]]`, and sibling phase files as relevant.
+3. **Base the phase README on `docs/templates/PHASE_README_TEMPLATE.md`** and the tasks file on `docs/phases/templates/TASK_TEMPLATE.md`. Both templates already have frontmatter — preserve the structure and update titles.
+
 ## Instructions
 
 This skill follows the 6-stage approach from `docs/phases/templates/task_template_prompt.md`:
 
 ### Stage 1: Initial Discovery & Project Scope
+
 - Read existing phase documentation
 - Understand the phase goals and context
 - Review PRODUCTION_ROADMAP.md for phase objectives
 
 ### Stage 2: Deep Technical Analysis
+
 - Explore relevant codebase areas
 - Identify existing patterns to follow
 - Review ARCHITECTURE_GUIDE.md for constraints
 - Check TECH_STACK.md for technology requirements
 
 ### Stage 3: Impact & Risk Analysis
+
 - Identify dependencies on other phases
 - Assess risks and mitigation strategies
 - Note potential blockers
 
 ### Stage 4: Detailed Component Inventory
+
 - List all components to create/modify
 - Map to packages (client/server)
 - Identify shared types and interfaces
 
 ### Stage 5: Task Planning & Sequencing
+
 - Break into 4-6 major tasks
 - Each task gets 3-7 sub-steps
 - Assign priorities (CRITICAL/HIGH/MEDIUM/LOW)
 - Define dependencies between tasks
 
 ### Stage 6: Success Criteria & Validation
+
 - Define functional success criteria
 - Define technical success criteria
 - Define quality success criteria
@@ -50,6 +79,7 @@ This skill follows the 6-stage approach from `docs/phases/templates/task_templat
 Use `docs/phases/templates/TASK_TEMPLATE.md` as the base.
 
 Create files:
+
 - `docs/phases/phaseN/README.md` - Phase overview
 - `docs/phases/phaseN/PHASEN_TASKS.md` - Detailed tasks
 
@@ -65,14 +95,17 @@ Each task should include:
 **Dependencies**: [Task numbers or "None"]
 
 #### Sub-tasks
+
 - [ ] N.1 [First sub-task]
 - [ ] N.2 [Second sub-task]
 - [ ] N.3 [Third sub-task]
 
 #### Deliverables
+
 - [What this task produces]
 
 #### Rollback Plan (if high-risk)
+
 - [How to revert if needed]
 ```
 

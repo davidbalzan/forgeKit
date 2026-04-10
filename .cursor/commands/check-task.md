@@ -3,10 +3,11 @@
 **Objective**: Mark tasks as complete in phase task documents and update related files.
 
 **Requirements**:
+
 - Read the relevant phase task file first
 - Update checkbox status
 - Update progress statistics
-- Optionally update `CURRENT_FOCUS.md`
+- Optionally update `docs/CURRENT_FOCUS.md`
 
 ## Process
 
@@ -17,6 +18,7 @@
 5. **Add completion notes** (if significant):
    ```markdown
    **✅ COMPLETION NOTES**:
+
    - [What was done]
    - [Any relevant details]
    - Commit: [hash]
@@ -33,6 +35,7 @@
 
 ```markdown
 ### 📈 Current Progress
+
 - ✅ Sprint 1 (Foundation): 100% complete (4/4 tasks)
 - 🚧 Sprint 2 (Features): 50% complete (2/4 tasks)
 - ⏳ Sprint 3 (Polish): 0% complete (0/3 tasks)
@@ -43,6 +46,7 @@
 ## Status Updates
 
 When marking complete:
+
 - Update task status from 🚧 to ✅
 - Update sprint/phase percentages
 - Update "Components Implemented" count
@@ -50,7 +54,8 @@ When marking complete:
 ## Related Updates
 
 After marking complete, consider:
-1. Update `CURRENT_FOCUS.md` to next task
+
+1. Update `docs/CURRENT_FOCUS.md` to next task
 2. Update phase README if sprint complete
 3. Update `docs/PRODUCTION_ROADMAP.md` if phase complete
 

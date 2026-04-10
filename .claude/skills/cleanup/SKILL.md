@@ -28,7 +28,7 @@ Files to DELETE:
 ├── docs/phases/phase*/PHASE*_TASKS.md  # Task breakdowns
 │
 Files to RESET (restore to template state):
-├── CURRENT_FOCUS.md                 # Reset to placeholder
+├── docs/CURRENT_FOCUS.md                 # Reset to placeholder
 └── docs/DECISIONS.md                # Reset to template with example ADR
 ```
 
@@ -39,7 +39,7 @@ These files are kept intact for rebuilding:
 ```
 ALWAYS PRESERVED:
 ├── README.md                        # Project README
-├── FORGEKIT_METHODOLOGY.md              # Core methodology
+├── docs/FORGEKIT_METHODOLOGY.md              # Core methodology
 │
 ├── docs/
 │   ├── COMMANDS.md                  # Commands guide
@@ -75,6 +75,7 @@ First, show what would be deleted without making changes:
 ## Cleanup Preview
 
 ### Files to DELETE:
+
 - docs/PRD.md
 - docs/TECH_STACK.md
 - docs/ARCHITECTURE_GUIDE.md
@@ -82,10 +83,12 @@ First, show what would be deleted without making changes:
 - ...
 
 ### Files to RESET:
-- CURRENT_FOCUS.md → restore to template
+
+- docs/CURRENT_FOCUS.md → restore to template
 - docs/DECISIONS.md → keep only example ADR
 
 ### Files PRESERVED:
+
 - docs/phases/phase1/README.md ✓
 - docs/phases/phase2/README.md ✓
 - docs/templates/PRD_TEMPLATE.md ✓
@@ -99,7 +102,8 @@ Proceed with cleanup? [y/N]
 After confirmation:
 
 1. **Delete project-specific files**
-2. **Reset CURRENT_FOCUS.md** to template state:
+2. **Reset docs/CURRENT_FOCUS.md** to template state:
+
    ```markdown
    # Current Focus
 
@@ -118,7 +122,7 @@ After confirmation:
 
    ## 🔗 Key Files
 
-   - Methodology: `FORGEKIT_METHODOLOGY.md`
+   - Methodology: `docs/FORGEKIT_METHODOLOGY.md`
    - Commands: `docs/COMMANDS.md`
 
    ## 📝 Session Notes
@@ -139,13 +143,16 @@ After confirmation:
 ## Cleanup Complete
 
 ### Deleted: X files
+
 - [list of deleted files]
 
 ### Reset: 2 files
-- CURRENT_FOCUS.md
+
+- docs/CURRENT_FOCUS.md
 - docs/DECISIONS.md
 
 ### Preserved: Y files
+
 - Phase READMEs
 - All templates
 - All skills/commands
@@ -157,7 +164,7 @@ Ready to start fresh with `/kickstart`
 
 - `--dry-run` - Preview changes without executing (default behavior)
 - `--keep-decisions` - Preserve all ADRs in DECISIONS.md
-- `--keep-phases` - Preserve phase task files (PHASE*_TASKS.md)
+- `--keep-phases` - Preserve phase task files (PHASE\*\_TASKS.md)
 
 ## Safety Features
 

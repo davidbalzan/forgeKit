@@ -1,6 +1,13 @@
+---
+title: "Task Template"
+tags: [forgekit/template]
+aliases: []
+---
+
 # [PROJECT NAME] [TASK TYPE] Tasks
 
 ## Overview
+
 [Brief description of the project/task. Explain what is being migrated/refactored/implemented and why it's necessary.]
 
 ## 🔍 [TASK TYPE] Audit Summary
@@ -8,43 +15,51 @@
 **CRITICAL FINDINGS**: [Summary of key discoveries during initial analysis]
 
 ### 📊 **Components [TO BE MIGRATED/IMPLEMENTED]**:
+
 - **[Category 1]**: [Number] [Component Type] ([specific examples])
 - **[Category 2]**: [Number] [Component Type] ([specific examples])
 - **[Category 3]**: [Number] [Component Type] ([specific examples])
 - **[Supporting Infrastructure]**: [Details about supporting files, configs, etc.]
 
 ### ⚠️ **Impact Assessment**:
+
 - **[Risk Type 1]**: [Description of risk and potential impact]
 - **[Risk Type 2]**: [Description of risk and potential impact]
 - **[Risk Type 3]**: [Description of risk and potential impact]
 - **[Architecture Impact]**: [How this affects system architecture]
 
 ### 📈 **Scale of [TASK TYPE]**:
+
 - **[X] Major Tasks** ([Task IDs]) → ✅ **[Y] COMPLETE**, **[Z] REMAINING**
 - **[X]+ Sub-Steps** → ✅ **[Y] COMPLETED**, **[Z]+ REMAINING**
 - **[X-Y] Days** estimated completion time → **~[Z] Days REMAINING**
 - **[X] [Task Type] Phases** from [priority level] to [priority level]
 
 ### 🎉 **COMPLETED [TASKS]**:
+
 - ✅ **[Task ID]: [Task Name]** - [Brief description of what was accomplished] ([metrics, lines of code, endpoints, etc.])
 - ✅ **[Task ID]: [Task Name]** - [Brief description of what was accomplished] ([metrics])
 
 ## 🚨 Components Not Yet [MIGRATED/IMPLEMENTED]
 
 ### [Category 1] ([source location/])
+
 - **[Component Name]** - [Description and importance] ([line count/size if relevant])
 - **[Component Name]** - [Description and importance] ([line count/size if relevant])
 
 ### [Category 2] ([source location/])
+
 - **[Component Name]** - [Description and purpose]
 - **[Component Name]** - [Description and purpose]
 
 ### [Additional Categories as needed]
+
 [Continue pattern for all major categories of components]
 
 ## 🎯 Target Architecture
 
 ### [System] Structure
+
 ```
 [target structure]/
 ├── [package1]/           # [Purpose and contents]
@@ -56,12 +71,14 @@
 ```
 
 ### [Integration] Pattern
+
 - **[Pattern 1]**: [Description of how components will work together]
 - **[Pattern 2]**: [Description of architectural decision]
 - **[Pattern 3]**: [Description of key principle]
 - **[Pattern 4]**: [Description of important constraint]
 
 ### Architecture Principles
+
 1. **[Principle 1]**: [Description]
 2. **[Principle 2]**: [Description]
 3. **[Principle 3]**: [Description]
@@ -73,14 +90,17 @@
 ### Phase 1: [Phase Name - Priority Level]
 
 #### [x] Task [ID]: [Task Name]
+
 **Priority**: [CRITICAL/HIGH/MEDIUM/LOW] ✅ **[STATUS]**
 **Package**: `[target location]`
-**Dependencies**: 
+**Dependencies**:
+
 - [Dependency 1 description]
 - [Dependency 2 description]
 - [Dependency 3 description]
 
 **Sub-Steps**:
+
 - [x] [Task ID].[Sub-ID]: [Detailed sub-task description]
 - [x] [Task ID].[Sub-ID]: [Detailed sub-task description]
 - [ ] [Task ID].[Sub-ID]: [Detailed sub-task description]
@@ -96,22 +116,27 @@
 **[✅ COMPLETION STATUS]**: [Detailed summary of what was accomplished, metrics, and current status]
 
 #### [ ] Task [ID]: [Task Name]
+
 **Priority**: [PRIORITY LEVEL]
 **Package**: `[target location]`
-**Dependencies**: 
+**Dependencies**:
+
 - [Dependencies listed]
 
 **Sub-Steps**:
+
 - [ ] [Task ID].[Sub-ID]: [Sub-task description]
 - [ ] [Task ID].[Sub-ID]: [Sub-task description]
 
-**Expected Deliverables**: 
+**Expected Deliverables**:
+
 - **[Deliverable 1]**: [Description of what will be created]
 - **[Deliverable 2]**: [Description of what will be created]
 - **[Integration/API Component]**: [Description of interfaces/endpoints]
 - **[Documentation]**: [Description of docs to be created]
 
 **🔄 Rollback Plan** _(for risky tasks)_:
+
 - **Revert trigger**: [Condition that triggers rollback - e.g., "Tests fail after migration"]
 - **Rollback steps**: [How to undo - e.g., "git revert to commit X, restore DB backup"]
 - **Data recovery**: [If applicable - backup locations, restore procedures]
@@ -124,13 +149,16 @@
 ### Phase [N]: [Final Phase Name]
 
 #### [ ] Task [ID]: [Final Task Name]
+
 **Priority**: [PRIORITY]
 **Package**: [Location]
-**Dependencies**: 
+**Dependencies**:
+
 - [All previous tasks must be complete]
 - [Any specific dependencies]
 
 **Sub-Steps**:
+
 - [ ] [Task ID].1: **[Audit/Review step]**
 - [ ] [Task ID].2: **[Validation step]**
 - [ ] [Task ID].3: **[Documentation step]**
@@ -141,6 +169,7 @@
 ## 🎯 Success Criteria
 
 ### Functional Requirements
+
 - [ ] [Functional requirement 1]
 - [ ] [Functional requirement 2]
 - [ ] [Functional requirement 3]
@@ -148,6 +177,7 @@
 - [ ] [Quality requirement]
 
 ### Quality Requirements
+
 - [ ] [Quality gate 1]
 - [ ] [Quality gate 2]
 - [ ] [Documentation requirement]
@@ -155,6 +185,7 @@
 - [ ] [Performance requirement]
 
 ### Architecture Requirements
+
 - [ ] [Architecture validation 1]
 - [ ] [Architecture validation 2]
 - [ ] [Build/deployment requirement]
@@ -164,14 +195,17 @@
 ## 📅 Estimated Timeline
 
 **Phase 1 ([Phase Name])**: [X-Y] days
+
 - [Brief description of what's included]
 - [Number]+ sub-steps across [X] major [components/services]
 
-**Phase 2 ([Phase Name])**: [X-Y] days  
+**Phase 2 ([Phase Name])**: [X-Y] days
+
 - [Brief description of what's included]
 - [Number]+ sub-steps for [category description]
 
 **Phase [N] ([Final Phase])**: [X-Y] days
+
 - [Brief description of what's included]
 - [Number]+ sub-steps for [category description]
 
@@ -182,7 +216,7 @@
 ## 🚀 [Task Type] Progress
 
 1. ✅ **Task [ID] ([Name])** - [STATUS] with [metrics/deliverables]
-2. ✅ **Task [ID] ([Name])** - [STATUS] with [metrics/deliverables]  
+2. ✅ **Task [ID] ([Name])** - [STATUS] with [metrics/deliverables]
 3. 🚧 **Task [ID] ([Name])** - [IN PROGRESS] with [current status]
 4. Continue with remaining tasks by priority
 5. Validate each phase before proceeding to the next
@@ -201,10 +235,10 @@
 
 ### High-Risk Tasks Identified
 
-| Task | Risk Level | Rollback Complexity | Backup Required |
-|------|------------|---------------------|-----------------|
-| Task X.X | 🔴 High | Medium | ✅ Yes - DB snapshot |
-| Task Y.Y | 🟡 Medium | Low | ❌ No - code only |
+| Task     | Risk Level | Rollback Complexity | Backup Required      |
+| -------- | ---------- | ------------------- | -------------------- |
+| Task X.X | 🔴 High    | Medium              | ✅ Yes - DB snapshot |
+| Task Y.Y | 🟡 Medium  | Low                 | ❌ No - code only    |
 
 ### Pre-Phase Checklist
 
@@ -238,10 +272,10 @@ git commit -m "Rollback: [reason]"
 
 _Add notes here if rollback was executed:_
 
-- **Date**: 
-- **Trigger**: 
-- **Resolution**: 
-- **Prevention**: 
+- **Date**:
+- **Trigger**:
+- **Resolution**:
+- **Prevention**:
 
 ---
 

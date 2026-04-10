@@ -3,14 +3,16 @@
 **Objective**: Reset the project to a clean template state, removing project-specific content while preserving essential structure for reuse.
 
 **Requirements**:
+
 - Always show dry-run preview first
 - Require confirmation before deleting
 - Preserve phase READMEs and all templates
-- Reset CURRENT_FOCUS.md and DECISIONS.md to template state
+- Reset docs/CURRENT_FOCUS.md and DECISIONS.md to template state
 
 ## What Gets REMOVED
 
 Project-specific files to delete:
+
 ```
 docs/PRD.md                         # Project requirements
 docs/PRD_*.md                       # Named PRD files
@@ -22,17 +24,19 @@ docs/phases/phase*/PHASE*_TASKS.md  # Task breakdowns
 ```
 
 Files to reset (restore to template state):
+
 ```
-CURRENT_FOCUS.md                    # Reset to placeholder
+docs/CURRENT_FOCUS.md                    # Reset to placeholder
 docs/DECISIONS.md                   # Reset to template with example ADR only
 ```
 
 ## What Gets PRESERVED
 
 Template infrastructure (never touched):
+
 ```
 README.md                           # Project README
-FORGEKIT_METHODOLOGY.md                 # Core methodology
+docs/FORGEKIT_METHODOLOGY.md                 # Core methodology
 TOOLS_PREFERENCE.md                 # Tool preferences
 docs/COMMANDS.md                    # Commands guide
 docs/phases/README.md               # Phase overview
@@ -49,6 +53,7 @@ docs/templates/PRD_TEMPLATE.md      # PRD template
 ### Step 1: Dry Run Preview
 
 Show what will be deleted/reset without making changes:
+
 ```
 ## Cleanup Preview
 
@@ -58,7 +63,7 @@ Show what will be deleted/reset without making changes:
 - ...
 
 ### Files to RESET:
-- CURRENT_FOCUS.md
+- docs/CURRENT_FOCUS.md
 - docs/DECISIONS.md
 
 ### Files PRESERVED:
@@ -71,7 +76,8 @@ Proceed with cleanup? [y/N]
 ### Step 2: Execute (after confirmation)
 
 1. Delete project-specific files
-2. Reset CURRENT_FOCUS.md to:
+2. Reset docs/CURRENT_FOCUS.md to:
+
    ```markdown
    # Current Focus
 
@@ -81,6 +87,7 @@ Proceed with cleanup? [y/N]
 
    **Next up**: Run `/kickstart` to initialize project
    ```
+
 3. Reset DECISIONS.md - keep only template and example ADR-001
 
 ### Step 3: Summary

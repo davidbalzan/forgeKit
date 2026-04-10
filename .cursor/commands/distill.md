@@ -10,6 +10,8 @@
 
 Don't distill personal preferences or obvious choices.
 
+**Obsidian format (required)**: `docs/DECISIONS.md` has YAML frontmatter — preserve it when appending a new ADR. Use `[[wikilinks]]` inside the ADR body where relevant.
+
 **Usage**:
 
 - Browse learnings from a category: `distill typescript`

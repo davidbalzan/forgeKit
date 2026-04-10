@@ -1,3 +1,9 @@
+---
+title: "Phase Templates"
+tags: [forgekit/template]
+aliases: ["Task Templates"]
+---
+
 # Planning Templates
 
 This directory contains reusable templates for planning documents, tasks, and specifications.
@@ -5,15 +11,18 @@ This directory contains reusable templates for planning documents, tasks, and sp
 ## Available Templates
 
 ### Task Template
-**File**: `TASK_TEMPLATE.md`  
+
+**File**: [[TASK_TEMPLATE]]  
 **Purpose**: Standard template for task planning and tracking
 
 Use this template when:
+
 - Breaking down a feature into tasks
 - Planning a new implementation
 - Creating a work breakdown structure
 
 Sections included:
+
 - Task overview and objectives
 - Scope and deliverables
 - Implementation steps
@@ -22,10 +31,12 @@ Sections included:
 - Definition of done
 
 ### Task Template Prompt
-**File**: `task_template_prompt.md`  
+
+**File**: [[task_template_prompt]]  
 **Purpose**: AI assistant prompt for generating task documents
 
 Use this when:
+
 - Working with AI assistants to plan tasks
 - Generating consistent task documentation
 - Ensuring comprehensive task breakdowns
@@ -40,6 +51,7 @@ Use this when:
 ## Creating New Templates
 
 When creating new templates:
+
 1. Use clear section headings
 2. Include placeholder text with examples
 3. Document the template's purpose
@@ -47,5 +59,5 @@ When creating new templates:
 
 ## Navigation
 
-- [Back to Phases](../README.md)
+- [[README|Back to Phases]]
 - Task Examples - See completed tasks using these templates (create a `completed/` directory as needed)
