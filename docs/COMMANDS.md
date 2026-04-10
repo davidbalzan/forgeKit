@@ -6,17 +6,19 @@ This guide explains how to use the ForgeKit workflow commands across different I
 
 ## Quick Reference
 
-| Command         | Purpose                       | When to Use                      |
-| --------------- | ----------------------------- | -------------------------------- |
-| `kickstart`     | Initialize project structure  | Starting a brand new project     |
-| `create-prd`    | Generate product requirements | Before development begins        |
-| `start-session` | Load project context          | Start of each coding session     |
-| `plan-phase`    | Create phase task breakdown   | Starting a new development phase |
-| `log-decision`  | Record architectural decision | After making tech choices        |
-| `update-focus`  | Update current work status    | End of session or after progress |
-| `check-task`    | Mark tasks complete           | After completing a task          |
-| `phase-status`  | View phase progress           | Checking overall progress        |
-| `cleanup`       | Reset to template state       | Reusing template for new project |
+| Command         | Purpose                       | When to Use                        |
+| --------------- | ----------------------------- | ---------------------------------- |
+| `kickstart`     | Initialize project structure  | Starting a brand new project       |
+| `create-prd`    | Generate product requirements | Before development begins          |
+| `start-session` | Load project context          | Start of each coding session       |
+| `plan-phase`    | Create phase task breakdown   | Starting a new development phase   |
+| `log-decision`  | Record architectural decision | After making tech choices          |
+| `update-focus`  | Update current work status    | End of session or after progress   |
+| `check-task`    | Mark tasks complete           | After completing a task            |
+| `phase-status`  | View phase progress           | Checking overall progress          |
+| `cleanup`       | Reset to template state       | Reusing template for new project   |
+| `remember`      | Capture learning globally     | After discovering a useful pattern |
+| `distill`       | Convert learning to ADR       | When a learning needs formal docs  |
 
 ---
 
@@ -91,6 +93,12 @@ Use slash commands directly:
 
 # Reset to template state
 /cleanup
+
+# Capture a learning
+/remember "typescript: Always use Zod for runtime validation"
+
+# Convert a learning to ADR
+/distill typescript
 ```
 
 ### Cursor
@@ -107,6 +115,8 @@ Type `/` in Agent chat (Cmd+L) to see available commands:
 /check-task
 /phase-status
 /cleanup
+/remember
+/distill
 ```
 
 Alternative: Use `@` file references:
@@ -134,6 +144,8 @@ Available prompts:
 - `check-task.prompt.md`
 - `phase-status.prompt.md`
 - `cleanup.prompt.md`
+- `remember.prompt.md`
+- `distill.prompt.md`
 
 ---
 
