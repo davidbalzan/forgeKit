@@ -5,7 +5,7 @@ description: Generate a new phase task document using the project template
 
 # Plan Phase - Task Document Generator
 
-Generate a comprehensive phase task document following the vibe coding methodology.
+Generate a comprehensive phase task document following the ForgeKit methodology.
 
 ## Instructions
 

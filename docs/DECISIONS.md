@@ -6,29 +6,133 @@ ADRs capture context that's easy to forget: why we chose X over Y, what constrai
 
 ---
 
-## 📋 Decision Log
+## Decision Log
 
 | ID | Decision | Status | Date |
 |----|----------|--------|------|
-| ADR-001 | [Example: Use Hono over Express](#adr-001-use-hono-over-express) | ✅ Accepted | 2026-01-12 |
-| ADR-002 | [Use Monorepo Structure](#adr-002-use-monorepo-structure) | ✅ Accepted | 2026-01-21 |
+| ADR-001 | [Monorepo with Turborepo](#adr-001-monorepo-with-turborepo) | Accepted | 2026-02-20 |
+| ADR-002 | [React + Vite for Frontend](#adr-002-react--vite-for-frontend) | Accepted | 2026-02-20 |
+| ADR-003 | [Node.js + Hono for Backend](#adr-003-nodejs--hono-for-backend) | Accepted | 2026-02-20 |
+
+---
+
+## ADR-001: Monorepo with Turborepo
+
+**Status**: Accepted
+**Date**: 2026-02-20
+
+### Context
+
+We need to manage frontend, backend, and shared packages in a cohesive way across the project.
+
+### Decision
+
+Use Turborepo with pnpm workspaces for monorepo management.
+
+### Consequences
+
+**Positive:**
+- Shared TypeScript types between frontend and backend
+- Parallel builds and caching speed up CI
+- Single repository simplifies dependency management
+- pnpm provides efficient disk usage with symlinks
+
+**Negative:**
+- Need to configure Turborepo pipeline
+- All team members work in same repo
+- Shared packages require careful versioning
+
+### Alternatives Considered
+
+| Alternative | Pros | Cons | Why Not |
+|-------------|------|------|---------|
+| Nx | More features, powerful generators | Steeper learning curve, heavier | Overkill for most projects |
+| Lerna | Familiar, established | Legacy, less active development | Outdated patterns |
+| Separate repos | Independent deployments | Friction for shared code | Coordination overhead |
+
+---
+
+## ADR-002: React + Vite for Frontend
+
+**Status**: Accepted
+**Date**: 2026-02-20
+
+### Context
+
+Need a frontend framework with fast iteration and a mature ecosystem.
+
+### Decision
+
+Use React 19 with Vite as the build tool and Tailwind CSS 4 for styling.
+
+### Consequences
+
+**Positive:**
+- React's component model and ecosystem maturity
+- Vite provides fast HMR essential for UI development
+- Tailwind 4 with CSS-first config and design tokens
+- Wide library support and team familiarity
+
+**Negative:**
+- Bundle size consideration for production
+- Tailwind 4 is relatively new (CSS-based config)
+
+### Alternatives Considered
+
+| Alternative | Pros | Cons | Why Not |
+|-------------|------|------|---------|
+| Next.js | Full-stack, SSR | SSR not always needed, adds complexity | Over-engineered for many use cases |
+| Vue + Vite | Great DX, smaller bundle | Smaller ecosystem | Fewer libraries available |
+| Svelte | Compiled, minimal runtime | Less mature ecosystem | Library ecosystem not ready |
+
+---
+
+## ADR-003: Node.js + Hono for Backend
+
+**Status**: Accepted
+**Date**: 2026-02-20
+
+### Context
+
+Need a fast, lightweight backend framework with excellent TypeScript support.
+
+### Decision
+
+Use Node.js runtime with Hono web framework.
+
+### Consequences
+
+**Positive:**
+- Hono is lightweight, Web Standards-based (~14kb)
+- TypeScript-first with excellent types
+- Built-in middleware (CORS, logger, Zod validation)
+- Portable across runtimes (Node, Bun, Deno, Cloudflare Workers)
+
+**Negative:**
+- Smaller ecosystem than Express
+- Team needs to learn Hono patterns
+
+### Alternatives Considered
+
+| Alternative | Pros | Cons | Why Not |
+|-------------|------|------|---------|
+| Express | Huge ecosystem, familiar | Legacy patterns, no native TypeScript | Dated patterns |
+| Fastify | Fast, good TS support | More complex plugin system | Heavier than needed |
+| Bun + Hono | Better performance | Bun still evolving, edge cases | Node.js more stable for production |
 
 ---
 
 ## ADR Template
 
-When adding a new decision, copy this template:
-
 ```markdown
 ## ADR-XXX: [Title]
 
-**Status**: 🟡 Proposed | ✅ Accepted | ❌ Rejected | 🔄 Superseded by ADR-XXX  
-**Date**: YYYY-MM-DD  
-**Deciders**: [Who was involved]
+**Status**: Proposed | Accepted | Rejected | Superseded by ADR-XXX
+**Date**: YYYY-MM-DD
 
 ### Context
 
-What is the issue that we're seeing that is motivating this decision or change?
+What is the issue that we're seeing that is motivating this decision?
 
 ### Decision
 
@@ -38,140 +142,13 @@ What is the change that we're proposing and/or doing?
 
 **Positive:**
 - Benefit 1
-- Benefit 2
 
 **Negative:**
 - Trade-off 1
-- Trade-off 2
-
-**Risks:**
-- Risk and mitigation
 
 ### Alternatives Considered
 
 | Alternative | Pros | Cons | Why Not |
 |-------------|------|------|---------|
 | Option A | ... | ... | ... |
-| Option B | ... | ... | ... |
 ```
-
----
-
-## ADR-001: Use Hono over Express
-
-**Status**: ✅ Accepted  
-**Date**: 2026-01-12  
-**Deciders**: Initial architecture team
-
-### Context
-
-We need a web framework for the backend API. The main candidates are Express (industry standard), Fastify (performance-focused), and Hono (modern, lightweight).
-
-### Decision
-
-Use **Hono** as our web framework.
-
-### Consequences
-
-**Positive:**
-- First-class TypeScript support with type-safe routing
-- Built-in OpenAPI/Swagger generation with `@hono/zod-openapi`
-- Lightweight (~14kb) with excellent performance
-- Works across runtimes (Node, Deno, Bun, Cloudflare Workers)
-- Modern middleware patterns
-
-**Negative:**
-- Smaller ecosystem than Express
-- Fewer tutorials and Stack Overflow answers
-- Team may need to learn new patterns
-
-**Risks:**
-- Community support uncertainty → Mitigated by active development and growing adoption
-- Missing middleware → Can use Express middleware via adapters
-
-### Alternatives Considered
-
-| Alternative | Pros | Cons | Why Not |
-|-------------|------|------|---------|
-| Express | Huge ecosystem, familiar | Dated patterns, callback-heavy, no native TS | Legacy patterns, middleware complexity |
-| Fastify | Fast, good TS support | More complex plugin system | Heavier than needed, less OpenAPI integration |
-| Koa | Clean middleware | Small ecosystem, less maintained | Not as actively developed |
-
----
-
-## ADR-002: Use Monorepo Structure
-
-**Status**: ✅ Accepted
-**Date**: 2026-01-21
-**Deciders**: Project architecture
-
-### Context
-
-When organizing a full-stack project with frontend (client) and backend (server) components, we need to decide between a monorepo (single repository) or polyrepo (multiple repositories) approach. This decision impacts developer experience, CI/CD, code sharing, and team collaboration.
-
-### Decision
-
-Use a **monorepo structure** with separate packages for client and server, unified by shared documentation and tooling at the root level.
-
-```
-project-root/
-├── client/          # Frontend application
-├── server/          # Backend application
-├── proto/           # Shared protocol definitions (optional)
-└── docs/            # Unified documentation
-```
-
-### Consequences
-
-**Positive:**
-- **Shared tooling** - Single ESLint, TypeScript, and Prettier config across packages
-- **Atomic commits** - Frontend and backend changes in one commit, easier to track related changes
-- **Simplified dependencies** - Shared types, protocols, and utilities between packages
-- **Unified documentation** - One `docs/` folder covers the whole system
-- **Easier refactoring** - Cross-package changes are easier to coordinate
-- **Single source of truth** - Version control, issues, and PRs in one place
-- **AI-friendly** - Easier for AI assistants to understand full system context
-
-**Negative:**
-- **Larger repository size** - Clone times increase as project grows
-- **Complex CI/CD** - Need to detect which packages changed for selective builds
-- **Permission granularity** - Can't restrict access to specific packages easily
-- **Build complexity** - Need workspace-aware tooling (pnpm, npm workspaces, etc.)
-
-**Risks:**
-- Build times may increase → Mitigated by using incremental builds and caching
-- Merge conflicts in shared files → Mitigated by clear ownership and modular structure
-
-### Alternatives Considered
-
-| Alternative | Pros | Cons | Why Not |
-|-------------|------|------|---------|
-| Polyrepo (separate repos) | Independent versioning, granular permissions, smaller clones | Harder to coordinate changes, duplicate tooling, version drift | Coordination overhead outweighs benefits for small-medium teams |
-| Git submodules | Separate repos with linking | Complex workflows, confusing for contributors | Adds complexity without significant benefits |
-| Monolith (single package) | Simplest setup | No separation of concerns, harder to scale | Doesn't scale, mixes frontend/backend concerns |
-
----
-
-## Best Practices for ADRs
-
-### When to Write an ADR
-
-- Choosing between technologies or frameworks
-- Defining architectural patterns (monorepo, microservices, etc.)
-- Making security or compliance decisions
-- Any decision you'd need to explain to a new team member
-
-### When NOT to Write an ADR
-
-- Implementation details that are easily changed
-- Style preferences (use linting rules instead)
-- Temporary workarounds (use code comments)
-
-### Keep ADRs Immutable
-
-Once accepted, don't modify an ADR. If a decision changes:
-1. Mark the old ADR as "🔄 Superseded by ADR-XXX"
-2. Create a new ADR explaining the change
-3. Reference the old ADR for context
-
-This preserves the historical record of how decisions evolved.

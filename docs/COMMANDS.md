@@ -1,22 +1,24 @@
 # AI Assistant Commands Guide
 
-This guide explains how to use the vibe coding workflow commands across different IDEs.
+This guide explains how to use the ForgeKit workflow commands across different IDEs.
 
 ---
 
 ## Quick Reference
 
-| Command | Purpose | When to Use |
-|---------|---------|-------------|
-| `kickstart` | Initialize project structure | Starting a brand new project |
-| `create-prd` | Generate product requirements | Before development begins |
-| `start-session` | Load project context | Start of each coding session |
-| `plan-phase` | Create phase task breakdown | Starting a new development phase |
-| `log-decision` | Record architectural decision | After making tech choices |
-| `update-focus` | Update current work status | End of session or after progress |
-| `check-task` | Mark tasks complete | After completing a task |
-| `phase-status` | View phase progress | Checking overall progress |
-| `cleanup` | Reset to template state | Reusing template for new project |
+| Command         | Purpose                       | When to Use                        |
+| --------------- | ----------------------------- | ---------------------------------- |
+| `kickstart`     | Initialize project structure  | Starting a brand new project       |
+| `create-prd`    | Generate product requirements | Before development begins          |
+| `start-session` | Load project context          | Start of each coding session       |
+| `plan-phase`    | Create phase task breakdown   | Starting a new development phase   |
+| `log-decision`  | Record architectural decision | After making tech choices          |
+| `update-focus`  | Update current work status    | End of session or after progress   |
+| `check-task`    | Mark tasks complete           | After completing a task            |
+| `phase-status`  | View phase progress           | Checking overall progress          |
+| `cleanup`       | Reset to template state       | Reusing template for new project   |
+| `remember`      | Capture learning globally     | After discovering a useful pattern |
+| `distill`       | Convert learning to ADR       | When a learning needs formal docs  |
 
 ---
 
@@ -91,6 +93,12 @@ Use slash commands directly:
 
 # Reset to template state
 /cleanup
+
+# Capture a learning
+/remember "typescript: Always use Zod for runtime validation"
+
+# Convert a learning to ADR
+/distill typescript
 ```
 
 ### Cursor
@@ -107,9 +115,12 @@ Type `/` in Agent chat (Cmd+L) to see available commands:
 /check-task
 /phase-status
 /cleanup
+/remember
+/distill
 ```
 
 Alternative: Use `@` file references:
+
 ```
 @kickstart.md - initialize my new project
 @create-prd.md - create PRD for authentication system
@@ -123,6 +134,7 @@ Alternative: Use `@` file references:
 4. Choose the prompt you want
 
 Available prompts:
+
 - `kickstart.prompt.md`
 - `create-prd.prompt.md`
 - `start-session.prompt.md`
@@ -132,6 +144,8 @@ Available prompts:
 - `check-task.prompt.md`
 - `phase-status.prompt.md`
 - `cleanup.prompt.md`
+- `remember.prompt.md`
+- `distill.prompt.md`
 
 ---
 
@@ -142,7 +156,8 @@ Available prompts:
 **Purpose**: Initialize a new project with complete documentation structure.
 
 **What it does**:
-1. Creates folder structure (`docs/`, `client/`, `server/`)
+
+1. Creates folder structure (`docs/`, `apps/web/`, `apps/api/`, `packages/shared/`)
 2. Guides through tech stack selection → `TECH_STACK.md`
 3. Records architecture decisions → `ARCHITECTURE_GUIDE.md`, `DECISIONS.md`
 4. Sets up phase structure → `PRODUCTION_ROADMAP.md`, `phases/`
@@ -152,6 +167,7 @@ Available prompts:
 **When to use**: Starting a brand new project from scratch.
 
 **Example**:
+
 ```
 /kickstart "TaskFlow - A project management app"
 ```
@@ -163,6 +179,7 @@ Available prompts:
 **Purpose**: Generate a comprehensive Product Requirements Document.
 
 **What it does**:
+
 1. Guides through problem discovery
 2. Captures vision and measurable goals
 3. Defines user personas and stories
@@ -173,6 +190,7 @@ Available prompts:
 **When to use**: Before starting development, to define what you're building.
 
 **Example**:
+
 ```
 /create-prd "User authentication system with OAuth support"
 ```
@@ -186,6 +204,7 @@ Available prompts:
 **Purpose**: Load project context at the beginning of a coding session.
 
 **What it does**:
+
 1. Reads `CURRENT_FOCUS.md` for active work
 2. Reviews phase progress from roadmap
 3. Checks recent decisions that affect current work
@@ -194,6 +213,7 @@ Available prompts:
 **When to use**: Every time you start working on the project.
 
 **Example**:
+
 ```
 /start-session
 ```
@@ -207,6 +227,7 @@ Available prompts:
 **Purpose**: Create detailed task breakdown for a development phase.
 
 **What it does**:
+
 1. Analyzes phase goals from roadmap
 2. Explores codebase for relevant patterns
 3. Assesses risks and dependencies
@@ -216,11 +237,13 @@ Available prompts:
 **When to use**: Starting a new phase of development.
 
 **Example**:
+
 ```
 /plan-phase 2 "Authentication & Authorization"
 ```
 
 **Output**:
+
 - `docs/phases/phase2/README.md`
 - `docs/phases/phase2/PHASE2_TASKS.md`
 
@@ -231,6 +254,7 @@ Available prompts:
 **Purpose**: Create an Architectural Decision Record (ADR).
 
 **What it does**:
+
 1. Captures the decision context
 2. Documents what was decided
 3. Records consequences (positive, negative, risks)
@@ -240,6 +264,7 @@ Available prompts:
 **When to use**: After making significant technical decisions.
 
 **Example**:
+
 ```
 /log-decision "Use Redis for session caching"
 ```
@@ -253,6 +278,7 @@ Available prompts:
 **Purpose**: Update the current work status in `CURRENT_FOCUS.md`.
 
 **What it does**:
+
 1. Updates active phase/task/sub-step
 2. Records what's being worked on and why
 3. Notes any blockers
@@ -260,11 +286,13 @@ Available prompts:
 5. Sets the "Last Updated" timestamp
 
 **When to use**:
+
 - End of coding session
 - After completing a major task
 - When encountering or resolving blockers
 
 **Example**:
+
 ```
 /update-focus "Completed JWT middleware, starting RBAC implementation"
 ```
@@ -276,6 +304,7 @@ Available prompts:
 **Purpose**: Mark tasks as complete and update progress.
 
 **What it does**:
+
 1. Updates checkbox in task file (`- [ ]` → `- [x]`)
 2. Updates progress statistics
 3. Adds completion notes if significant
@@ -284,6 +313,7 @@ Available prompts:
 **When to use**: After completing a task or sub-task.
 
 **Example**:
+
 ```
 /check-task 2.3
 ```
@@ -295,6 +325,7 @@ Available prompts:
 **Purpose**: Get a comprehensive status report on phase progress.
 
 **What it does**:
+
 1. Calculates progress percentages
 2. Lists completed, in-progress, and remaining tasks
 3. Identifies blockers and risks
@@ -303,6 +334,7 @@ Available prompts:
 **When to use**: Checking overall progress, sprint planning, status updates.
 
 **Example**:
+
 ```
 /phase-status 2
 ```
@@ -314,6 +346,7 @@ Available prompts:
 **Purpose**: Reset project to clean template state for reuse.
 
 **What it does**:
+
 1. Shows dry-run preview of changes
 2. Deletes project-specific files (PRD, TECH_STACK, etc.)
 3. Resets CURRENT_FOCUS.md to template state
@@ -321,6 +354,7 @@ Available prompts:
 5. Preserves all phase READMEs and templates
 
 **What gets REMOVED**:
+
 ```
 docs/PRD.md, docs/PRD_*.md          # Project requirements
 docs/TECH_STACK.md                   # Technology choices
@@ -331,6 +365,7 @@ docs/phases/phase*/PHASE*_TASKS.md   # Task breakdowns
 ```
 
 **What gets PRESERVED**:
+
 ```
 docs/phases/phase*/README.md         # Phase structure (for rebuilding)
 docs/phases/templates/*              # All task templates
@@ -338,12 +373,13 @@ docs/templates/PRD_TEMPLATE.md       # PRD template
 .claude/skills/*                     # All skills
 .cursor/commands/*                   # All commands
 .vscode/prompts/*                    # All prompts
-VIBE_CODING_SEED.md                  # Core methodology
+FORGEKIT_METHODOLOGY.md                  # Core methodology
 ```
 
 **When to use**: When you want to reuse this template for a new project.
 
 **Example**:
+
 ```
 /cleanup
 /cleanup --dry-run
@@ -356,47 +392,60 @@ VIBE_CODING_SEED.md                  # Core methodology
 
 ## File Locations
 
-| IDE | Location | File Pattern |
-|-----|----------|--------------|
-| Claude Code | `.claude/skills/[name]/` | `SKILL.md` |
-| Cursor | `.cursor/commands/` | `[name].md` |
-| VS Code | `.vscode/prompts/` | `[name].prompt.md` |
+| IDE         | Location                 | File Pattern       |
+| ----------- | ------------------------ | ------------------ |
+| Claude Code | `.claude/skills/[name]/` | `SKILL.md`         |
+| Cursor      | `.cursor/commands/`      | `[name].md`        |
+| VS Code     | `.vscode/prompts/`       | `[name].prompt.md` |
 
 ---
 
 ## Tips for Effective Use
 
 ### Start Every Session Right
+
 ```
 /start-session
 ```
+
 This loads context and reminds you where you left off.
 
 ### Capture Decisions Immediately
+
 When you make a technology choice, log it:
+
 ```
 /log-decision "Chose Zustand over Redux for state management"
 ```
+
 Future you will thank you.
 
 ### Keep Focus Updated
+
 At the end of each session:
+
 ```
 /update-focus "Completed X, next up is Y"
 ```
 
 ### Use Phase Status for Planning
+
 Before starting new work:
+
 ```
 /phase-status 2
 ```
+
 This helps identify what's left and what's blocked.
 
 ### Don't Skip the PRD
+
 Even for small features:
+
 ```
 /create-prd "Dark mode toggle"
 ```
+
 It forces you to think through requirements before coding.
 
 ---
@@ -404,16 +453,19 @@ It forces you to think through requirements before coding.
 ## Troubleshooting
 
 ### Commands not appearing in Cursor
+
 - Ensure files are in `.cursor/commands/` (not `.cursor/prompts/`)
 - Restart Cursor after adding new commands
 - Check that files have `.md` extension
 
 ### Commands not appearing in VS Code
+
 - Ensure files are in `.vscode/prompts/`
 - Files must have `.prompt.md` extension
 - Check the `mode` in frontmatter (`ask` or `edit`)
 
 ### Claude Code skills not working
+
 - Skills must be in `.claude/skills/[name]/SKILL.md`
 - Check the frontmatter format (name, description)
 - Ensure `disable-model-invocation: true` is set

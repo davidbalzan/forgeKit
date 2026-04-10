@@ -1,6 +1,6 @@
-# Start Session - Vibe Coding Context Loader
+# Start Session - ForgeKit Context Loader
 
-Load instant context from the vibe coding documentation to understand current project state.
+Load instant context from the ForgeKit documentation to understand current project state.
 
 ## Instructions
 

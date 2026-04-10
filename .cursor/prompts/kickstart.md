@@ -1,6 +1,6 @@
 # Kickstart - Project Initialization Wizard
 
-Initialize a new project with the complete vibe coding documentation structure. This prompt guides you through setting up all foundational documents for a well-organized, AI-friendly project.
+Initialize a new project with the complete ForgeKit documentation structure. This prompt guides you through setting up all foundational documents for a well-organized, AI-friendly project.
 
 ## Instructions
 
@@ -47,7 +47,7 @@ Ask about each layer (skip if not applicable):
 - Monorepo? (Yes/No)
 - Deployment target? (Vercel, AWS, Docker, etc.)
 
-Generate `docs/TECH_STACK.md` with the collected information.
+Generate `docs/TECH_STACK.md` using `docs/templates/TECH_STACK_TEMPLATE.md` as the structure. Fill in the placeholders with the collected information.
 
 ### Stage 3: Architecture Decisions
 
@@ -56,9 +56,9 @@ For each major technology choice, ask:
 2. **What alternatives were considered?** - Other options evaluated
 3. **What are the trade-offs?** - Pros and cons
 
-Generate:
-- `docs/ARCHITECTURE_GUIDE.md` - Overview and patterns
-- `docs/DECISIONS.md` - Initial ADRs for key choices
+Generate using the corresponding templates in `docs/templates/`:
+- `docs/ARCHITECTURE_GUIDE.md` - from `ARCHITECTURE_GUIDE_TEMPLATE.md`
+- `docs/DECISIONS.md` - Initial ADRs for key choices (use existing DECISIONS.md ADR template section as structure)
 
 ### Stage 4: Project Phases
 
@@ -85,10 +85,10 @@ Phase 3: Features (Business Logic, Integrations)
 Phase 4: Production (Monitoring, Docs, Deployment)
 ```
 
-Generate:
-- `docs/PRODUCTION_ROADMAP.md` - High-level roadmap
-- `docs/phases/README.md` - Phase overview
-- `docs/phases/phase1/README.md` - First phase outline
+Generate using the corresponding templates in `docs/templates/`:
+- `docs/PRODUCTION_ROADMAP.md` - from `PRODUCTION_ROADMAP_TEMPLATE.md`
+- `docs/phases/README.md` - from `PHASES_README_TEMPLATE.md`
+- `docs/phases/phase1/README.md` - from `PHASE_README_TEMPLATE.md`
 
 ### Stage 5: Initialize Focus
 
@@ -106,7 +106,7 @@ If the project has a frontend, ask:
 2. **Typography?** - Font family preferences
 3. **Component style?** - Minimal, modern, playful, corporate
 
-Generate `docs/DESIGN_SYSTEM.md` if applicable.
+Generate `docs/DESIGN_SYSTEM.md` from `docs/templates/DESIGN_SYSTEM_TEMPLATE.md` if applicable.
 
 ### Stage 7: Summary & Next Steps
 
@@ -135,18 +135,16 @@ Provide a summary of everything created:
 
 ## Output Files
 
-| File | Purpose |
-|------|---------|
-| `docs/TECH_STACK.md` | Technology choices and versions |
-| `docs/ARCHITECTURE_GUIDE.md` | System design and patterns |
-| `docs/DECISIONS.md` | Architectural Decision Records |
-| `docs/PRODUCTION_ROADMAP.md` | High-level phase overview |
-| `docs/DESIGN_SYSTEM.md` | Visual design guidelines (optional) |
-| `docs/phases/README.md` | Phase navigation and progress |
-| `docs/phases/phase1/README.md` | First phase overview |
-| `docs/phases/templates/*` | Reusable planning templates |
-| `docs/templates/PRD_TEMPLATE.md` | PRD template |
-| `CURRENT_FOCUS.md` | Active work quick reference |
+| File | Source Template | Purpose |
+|------|----------------|---------|
+| `docs/TECH_STACK.md` | `docs/templates/TECH_STACK_TEMPLATE.md` | Technology choices and versions |
+| `docs/ARCHITECTURE_GUIDE.md` | `docs/templates/ARCHITECTURE_GUIDE_TEMPLATE.md` | System design and patterns |
+| `docs/DECISIONS.md` | (ADR template in existing file) | Architectural Decision Records |
+| `docs/PRODUCTION_ROADMAP.md` | `docs/templates/PRODUCTION_ROADMAP_TEMPLATE.md` | High-level phase overview |
+| `docs/DESIGN_SYSTEM.md` | `docs/templates/DESIGN_SYSTEM_TEMPLATE.md` | Visual design guidelines (optional) |
+| `docs/phases/README.md` | `docs/templates/PHASES_README_TEMPLATE.md` | Phase navigation and progress |
+| `docs/phases/phase1/README.md` | `docs/templates/PHASE_README_TEMPLATE.md` | First phase overview |
+| `CURRENT_FOCUS.md` | (generated from context) | Active work quick reference |
 
 ## Tips
 

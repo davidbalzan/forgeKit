@@ -1,6 +1,6 @@
 # Start Session - Context Loader
 
-**Objective**: Load project context from vibe coding documentation to understand current state and provide a session summary.
+**Objective**: Load project context from ForgeKit documentation to understand current state and provide a session summary.
 
 **Requirements**:
 - Read documentation files in the specified order

@@ -29,4 +29,4 @@ These files are automatically updated via `/remember` command:
 
 ## Sync
 
-Knowledge is synced to [vibeSeed](https://github.com/davidbalzan/vibeSeed) for persistence across machines and new projects.
+Knowledge is synced to [ForgeKit](https://github.com/davidbalzan/forgeKit) for persistence across machines and new projects.

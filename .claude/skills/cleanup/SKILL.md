@@ -39,8 +39,7 @@ These files are kept intact for rebuilding:
 ```
 ALWAYS PRESERVED:
 ├── README.md                        # Project README
-├── VIBE_CODING_SEED.md              # Core methodology
-├── TOOLS_PREFERENCE.md              # Tool preferences
+├── FORGEKIT_METHODOLOGY.md              # Core methodology
 │
 ├── docs/
 │   ├── COMMANDS.md                  # Commands guide
@@ -52,7 +51,13 @@ ALWAYS PRESERVED:
 │   │       ├── TASK_TEMPLATE.md
 │   │       └── task_template_prompt.md
 │   └── templates/
-│       └── PRD_TEMPLATE.md          # PRD template preserved
+│       ├── PRD_TEMPLATE.md              # PRD template
+│       ├── TECH_STACK_TEMPLATE.md       # Tech stack template
+│       ├── ARCHITECTURE_GUIDE_TEMPLATE.md # Architecture template
+│       ├── PRODUCTION_ROADMAP_TEMPLATE.md # Roadmap template
+│       ├── DESIGN_SYSTEM_TEMPLATE.md    # Design system template
+│       ├── PHASES_README_TEMPLATE.md    # Phases overview template
+│       └── PHASE_README_TEMPLATE.md     # Individual phase template
 │
 ├── .claude/skills/                  # All skills preserved
 ├── .cursor/commands/                # All commands preserved
@@ -113,7 +118,7 @@ After confirmation:
 
    ## 🔗 Key Files
 
-   - Methodology: `VIBE_CODING_SEED.md`
+   - Methodology: `FORGEKIT_METHODOLOGY.md`
    - Commands: `docs/COMMANDS.md`
 
    ## 📝 Session Notes
