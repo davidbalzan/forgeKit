@@ -8,17 +8,17 @@ Cursor supports custom slash commands via `.cursor/commands/`. Type `/` in Agent
 
 ### Available Commands
 
-| Command | Purpose | When to Use |
-|---------|---------|-------------|
-| `/kickstart` | Initialize project structure | Starting a brand new project |
-| `/create-prd` | Generate a PRD | Defining product requirements |
-| `/start-session` | Load project context | Start of each coding session |
-| `/log-decision` | Create an ADR | After making architectural decisions |
-| `/plan-phase` | Generate phase docs | Starting a new project phase |
-| `/update-focus` | Update CURRENT_FOCUS.md | End of session or after major progress |
-| `/check-task` | Mark tasks complete | After completing a task |
-| `/phase-status` | View phase progress | Checking overall progress |
-| `/cleanup` | Reset to template state | Reusing template for new project |
+| Command          | Purpose                      | When to Use                            |
+| ---------------- | ---------------------------- | -------------------------------------- |
+| `/kickstart`     | Initialize project structure | Starting a brand new project           |
+| `/create-prd`    | Generate a PRD               | Defining product requirements          |
+| `/start-session` | Load project context         | Start of each coding session           |
+| `/log-decision`  | Create an ADR                | After making architectural decisions   |
+| `/plan-phase`    | Generate phase docs          | Starting a new project phase           |
+| `/update-focus`  | Update docs/CURRENT_FOCUS.md | End of session or after major progress |
+| `/check-task`    | Mark tasks complete          | After completing a task                |
+| `/phase-status`  | View phase progress          | Checking overall progress              |
+| `/cleanup`       | Reset to template state      | Reusing template for new project       |
 
 ### How to Use
 
@@ -49,17 +49,17 @@ You can also reference prompt files directly in chat using `@`:
 
 ### Available Prompts
 
-| Prompt | Purpose |
-|--------|---------|
-| `@kickstart.md` | Initialize project structure |
-| `@create-prd.md` | Generate a PRD |
-| `@start-session.md` | Load project context |
-| `@log-decision.md` | Create an ADR |
-| `@plan-phase.md` | Generate phase docs |
-| `@update-focus.md` | Update Current Focus |
-| `@check-task.md` | Mark tasks complete |
-| `@phase-status.md` | View phase progress |
-| `@cleanup.md` | Reset to template state |
+| Prompt              | Purpose                      |
+| ------------------- | ---------------------------- |
+| `@kickstart.md`     | Initialize project structure |
+| `@create-prd.md`    | Generate a PRD               |
+| `@start-session.md` | Load project context         |
+| `@log-decision.md`  | Create an ADR                |
+| `@plan-phase.md`    | Generate phase docs          |
+| `@update-focus.md`  | Update Current Focus         |
+| `@check-task.md`    | Mark tasks complete          |
+| `@phase-status.md`  | View phase progress          |
+| `@cleanup.md`       | Reset to template state      |
 
 ### How to Use
 
@@ -97,9 +97,9 @@ You can also reference prompt files directly in chat using `@`:
 
 ## Comparison: Claude Code vs Cursor vs VS Code Copilot
 
-| Claude Code | Cursor | VS Code Copilot |
-|-------------|--------|-----------------|
-| `/kickstart` | `/kickstart` | Prompt picker → `kickstart` |
-| Slash commands | Slash commands | Prompt files + picker |
-| `.claude/skills/` | `.cursor/commands/` | `.vscode/prompts/` |
-| `SKILL.md` files | `.md` files | `.prompt.md` files |
+| Claude Code       | Cursor              | VS Code Copilot             |
+| ----------------- | ------------------- | --------------------------- |
+| `/kickstart`      | `/kickstart`        | Prompt picker → `kickstart` |
+| Slash commands    | Slash commands      | Prompt files + picker       |
+| `.claude/skills/` | `.cursor/commands/` | `.vscode/prompts/`          |
+| `SKILL.md` files  | `.md` files         | `.prompt.md` files          |

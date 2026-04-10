@@ -2,6 +2,10 @@
 
 Create an Architectural Decision Record (ADR) in docs/DECISIONS.md.
 
+## Obsidian Format (Required)
+
+`docs/DECISIONS.md` has YAML frontmatter at the top — preserve it exactly when appending. Use `[[wikilinks]]` inside the ADR body where relevant (e.g. `[[TECH_STACK]]`, `[[DECISIONS#adr-003|ADR-003]]` for supersessions).
+
 ## Instructions
 
 1. **Read docs/DECISIONS.md** to get the current ADR count and format
@@ -31,30 +35,35 @@ Ask the user for any missing information:
 **Status**: Accepted | Proposed | Superseded by ADR-XXX
 
 #### Context
+
 [What is the issue that we're seeing that is motivating this decision?]
 
 #### Decision
+
 [What is the change that we're proposing and/or doing?]
 
 #### Consequences
 
 **Positive:**
+
 - [Benefit 1]
 - [Benefit 2]
 
 **Negative:**
+
 - [Trade-off 1]
 - [Trade-off 2]
 
 **Risks:**
+
 - [Risk to monitor]
 
 #### Alternatives Considered
 
-| Alternative | Pros | Cons | Why Not Chosen |
-|-------------|------|------|----------------|
-| [Option 1] | [Pros] | [Cons] | [Reason] |
-| [Option 2] | [Pros] | [Cons] | [Reason] |
+| Alternative | Pros   | Cons   | Why Not Chosen |
+| ----------- | ------ | ------ | -------------- |
+| [Option 1]  | [Pros] | [Cons] | [Reason]       |
+| [Option 2]  | [Pros] | [Cons] | [Reason]       |
 ```
 
 ## Key Rules
@@ -69,7 +78,7 @@ Ask the user for any missing information:
 Update the table at the top of DECISIONS.md:
 
 ```markdown
-| ID | Title | Status | Date |
-|----|-------|--------|------|
+| ID      | Title   | Status   | Date       |
+| ------- | ------- | -------- | ---------- |
 | ADR-XXX | [Title] | Accepted | YYYY-MM-DD |
 ```

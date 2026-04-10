@@ -9,7 +9,7 @@ Load instant context from the ForgeKit documentation to understand current proje
 
 ## Instructions
 
-1. **Read CURRENT_FOCUS.md** first - quick reference for active work
+1. **Read docs/CURRENT_FOCUS.md** first - quick reference for active work
 2. **Read docs/PRODUCTION_ROADMAP.md** - the "Current Focus" section at the top is the primary entry point
 3. **Read the active phase README** - get context on current phase goals
 4. **Read the active phase TASKS file** - understand specific task breakdown
@@ -27,15 +27,19 @@ Provide a concise summary:
 **Status**: [In Progress / Blocked / etc.]
 
 ### Recent Progress
+
 - [What was completed]
 
 ### Recent Decisions
+
 - ADR-XXX: [Title] - [Brief impact on current work]
 
 ### Blockers
+
 - [Any blocking items, or "None"]
 
 ### Suggested Next Steps
+
 1. [First priority]
 2. [Second priority]
 ```
@@ -50,6 +54,7 @@ Provide a concise summary:
 ## Decision Relevance
 
 When surfacing decisions:
+
 - Show ADRs from the last 30 days
 - Highlight any decisions related to the current phase
 - Note any "Proposed" decisions awaiting confirmation

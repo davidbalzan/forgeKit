@@ -1,17 +1,24 @@
 ---
 name: update-focus
-description: Update the Current Focus section in CURRENT_FOCUS.md with session progress
+description: Update the Current Focus section in docs/CURRENT_FOCUS.md with session progress
 disable-model-invocation: true
 argument-hint: "[summary of what was accomplished]"
 ---
 
 # Update Focus - Session Progress Recorder
 
-Update the "Current Focus" section in `CURRENT_FOCUS.md` to capture session progress for future context.
+Update the "Current Focus" section in `docs/CURRENT_FOCUS.md` to capture session progress for future context.
+
+## Obsidian Format (Required)
+
+`docs/CURRENT_FOCUS.md` lives in the Obsidian vault and already has YAML frontmatter. When updating:
+
+1. **Do NOT touch the frontmatter** at the top of the file — preserve it exactly.
+2. **Use `[[wikilinks]]`** when referencing other docs in session notes (e.g. `[[DECISIONS#adr-005|ADR-005]]`, `[[phase2/README|Phase 2]]`).
 
 ## Instructions
 
-1. **Read CURRENT_FOCUS.md** to understand existing state (focus on the "Current Focus" section at the top)
+1. **Read docs/CURRENT_FOCUS.md** to understand existing state (focus on the "Current Focus" section at the top)
 2. **Gather session progress** from conversation context or $ARGUMENTS
 3. **Update the Current Focus section**:
    - Phase and task (if changed)

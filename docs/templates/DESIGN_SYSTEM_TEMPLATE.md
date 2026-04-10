@@ -1,3 +1,9 @@
+---
+title: "Design System Template"
+tags: [forgekit/template]
+aliases: []
+---
+
 # [Project Name] - Design System
 
 > Visual language reference for consistent UI across all frontend code. **Essential for AI agents** when generating components, layouts, and styling. All color values, spacing, and component patterns should reference this document.
@@ -7,6 +13,7 @@
 ## 🎨 Color Palette
 
 ### Primary Colors
+
 > The primary color family is used for main actions, active states, and brand identity elements.
 
 - **Primary**: `#[hex]` — [Usage: main CTA buttons, active navigation, links. Describe the color, e.g., "Deep indigo"]
@@ -14,12 +21,14 @@
 - **Primary Light**: `#[hex]` — [Usage: focus rings, selected backgrounds, subtle highlights. Low opacity for layering]
 
 ### Secondary Colors (if applicable)
+
 > Secondary colors complement the primary palette for less prominent actions and UI elements.
 
 - **Secondary**: `#[hex]` — [Usage and color description, e.g., "Teal accent for secondary actions and data visualization"]
 - **Accent**: `#[hex]` — [Usage and color description, e.g., "Warm amber for highlights, badges, and attention markers"]
 
 ### Status Colors
+
 > Semantic colors that communicate meaning. These should be consistent across all feedback UI.
 
 - **Success**: `#[hex]` ([color name, e.g., "Emerald"]) — [Usage: positive feedback, completed states, confirmation messages. Must pair with success-light for backgrounds]
@@ -28,6 +37,7 @@
 - **Info**: `#[hex]` ([color name, e.g., "Sky"]) — [Usage: informational banners, tooltips, neutral state indicators]
 
 ### Neutral Scale
+
 > Grays used for text, backgrounds, borders, and disabled states. The full scale ensures sufficient contrast at every level.
 
 ```
@@ -44,6 +54,7 @@
 ```
 
 ### Dark Mode
+
 > Dark mode inverts the surface hierarchy while maintaining readability and reducing eye strain. All color values must meet WCAG AA contrast requirements on dark surfaces.
 
 ```
@@ -56,6 +67,7 @@ Secondary:  #[hex]  — Secondary/description text (reduced emphasis)
 ```
 
 ### CSS Custom Properties
+
 > Define these in your global CSS or Tailwind theme. AI agents should use these variable names, not raw hex values.
 
 ```css
@@ -79,29 +91,35 @@ Secondary:  #[hex]  — Secondary/description text (reduced emphasis)
 ## ✏️ Typography
 
 ### Font Stack
+
 > Define font families with proper fallbacks. Include licensing notes and loading strategy.
 
 ```css
---font-primary: '[Primary Font Name, e.g., Inter]', [fallback stack, e.g., "system-ui, -apple-system, sans-serif"];
---font-mono: '[Monospace Font Name, e.g., JetBrains Mono]', [fallback stack, e.g., "'Fira Code', 'Cascadia Code', monospace"];
+--font-primary:
+  "[Primary Font Name, e.g., Inter]", [fallback stack, e.g.,
+  "system-ui, -apple-system, sans-serif"];
+--font-mono:
+  "[Monospace Font Name, e.g., JetBrains Mono]", [fallback stack, e.g.,
+  "'Fira Code', 'Cascadia Code', monospace"];
 ```
 
 **Loading Strategy**: [How fonts are loaded — e.g., "Google Fonts via <link> with display=swap" or "Self-hosted woff2 with font-display: optional"]
 **Licensing**: [Font license — e.g., "Inter: SIL Open Font License, free for commercial use"]
 
 ### Type Scale
+
 > Each level in the type scale has a specific semantic purpose. AI agents should match content type to the appropriate level.
 
-| Name | Size | Line Height | Weight | Letter Spacing | Usage |
-|------|------|-------------|--------|---------------|-------|
-| Display | [X]px / [X]rem | [X] | [Bold/700] | [X]em | [Page titles, hero headings — used sparingly, max once per page] |
-| Heading 1 | [X]px / [X]rem | [X] | [Semibold/600] | [X]em | [Section headings — primary content divisions] |
-| Heading 2 | [X]px / [X]rem | [X] | [Semibold/600] | [X]em | [Subsection headings — secondary content grouping] |
-| Body Large | [X]px / [X]rem | [X] | [Regular/400] | normal | [Lead paragraphs, feature descriptions — emphasis text] |
-| Body | [X]px / [X]rem | [X] | [Regular/400] | normal | [Main content, paragraphs — the default text size] |
-| Body Small | [X]px / [X]rem | [X] | [Regular/400] | normal | [Supporting text, captions, helper text below inputs] |
-| Caption | [X]px / [X]rem | [X] | [Medium/500] | [X]em | [Labels, metadata, timestamps — often uppercase for labels] |
-| Code | [X]px / [X]rem | [X] | [Regular/400 (mono)] | normal | [Inline code, code blocks, technical values — uses mono font] |
+| Name       | Size           | Line Height | Weight               | Letter Spacing | Usage                                                            |
+| ---------- | -------------- | ----------- | -------------------- | -------------- | ---------------------------------------------------------------- |
+| Display    | [X]px / [X]rem | [X]         | [Bold/700]           | [X]em          | [Page titles, hero headings — used sparingly, max once per page] |
+| Heading 1  | [X]px / [X]rem | [X]         | [Semibold/600]       | [X]em          | [Section headings — primary content divisions]                   |
+| Heading 2  | [X]px / [X]rem | [X]         | [Semibold/600]       | [X]em          | [Subsection headings — secondary content grouping]               |
+| Body Large | [X]px / [X]rem | [X]         | [Regular/400]        | normal         | [Lead paragraphs, feature descriptions — emphasis text]          |
+| Body       | [X]px / [X]rem | [X]         | [Regular/400]        | normal         | [Main content, paragraphs — the default text size]               |
+| Body Small | [X]px / [X]rem | [X]         | [Regular/400]        | normal         | [Supporting text, captions, helper text below inputs]            |
+| Caption    | [X]px / [X]rem | [X]         | [Medium/500]         | [X]em          | [Labels, metadata, timestamps — often uppercase for labels]      |
+| Code       | [X]px / [X]rem | [X]         | [Regular/400 (mono)] | normal         | [Inline code, code blocks, technical values — uses mono font]    |
 
 ---
 
@@ -125,6 +143,7 @@ Token    Value    Usage Examples
 ```
 
 ### Layout-Specific Spacing
+
 - **Page max width**: [X]px — [E.g., "1280px for content, 1440px for full-bleed"]
 - **Page padding (mobile)**: [X]px — [Horizontal padding on small screens]
 - **Page padding (desktop)**: [X]px — [Horizontal padding on large screens]
@@ -138,6 +157,7 @@ Token    Value    Usage Examples
 > Reference implementations for core components. AI agents should follow these patterns for consistency. Use the design tokens defined above — never hardcode colors or spacing.
 
 ### Buttons
+
 ```tsx
 // Primary — Main call-to-action. Use sparingly: one primary button per section.
 className="bg-[primary] text-white px-4 py-2 rounded-lg font-semibold
@@ -161,36 +181,43 @@ className="bg-[error] text-white px-4 py-2 rounded-lg font-semibold
 ```
 
 **Button Sizes**:
+
 - `sm`: `px-3 py-1.5 text-sm` — [Usage: inline actions, table rows, compact UI]
 - `md`: `px-4 py-2 text-base` — [Usage: default size, forms, dialogs] (default)
 - `lg`: `px-6 py-3 text-lg` — [Usage: hero CTAs, primary page actions, onboarding]
 
 ### Cards
+
 ```css
 /* Standard card — the primary content container */
-background: var(--color-surface);            /* Light: white, Dark: elevated surface */
-border: 1px solid var(--color-border);       /* Subtle border, not shadow, for definition */
-border-radius: 12px;                          /* Consistent rounding across all cards */
-padding: [spacing-6];                         /* 24px standard internal padding */
-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);  /* Minimal shadow — border does the work */
+background: var(--color-surface); /* Light: white, Dark: elevated surface */
+border: 1px solid var(--color-border); /* Subtle border, not shadow, for definition */
+border-radius: 12px; /* Consistent rounding across all cards */
+padding: [spacing-6]; /* 24px standard internal padding */
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Minimal shadow — border does the work */
 
 /* Card hover state (for interactive cards only) */
-transition: border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+transition:
+  border-color 150ms ease-in-out,
+  box-shadow 150ms ease-in-out;
 hover: border-color var(--color-primary-light);
 hover: box-shadow 0 2px 8px rgba(0, 0, 0, 0.08);
 ```
 
 ### Inputs
+
 ```css
 /* Text input — standard form input */
 background: var(--color-surface);
 border: 1px solid var(--color-border);
 border-radius: 8px;
-padding: 10px 12px;                           /* Slightly more vertical padding for touch targets */
-font-size: 14px;                              /* Body size for readability */
+padding: 10px 12px; /* Slightly more vertical padding for touch targets */
+font-size: 14px; /* Body size for readability */
 line-height: 1.5;
 color: var(--color-primary-text);
-transition: border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+transition:
+  border-color 150ms ease-in-out,
+  box-shadow 150ms ease-in-out;
 
 /* Focus state — clearly visible but not jarring */
 &:focus {
@@ -214,16 +241,20 @@ transition: border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
 ```
 
 ### Badges / Status Indicators
+
 ```tsx
 // Pattern for status badges — color communicates meaning, text provides context
 // Success
-className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[success-light] text-[success-dark]"
+className =
+  "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[success-light] text-[success-dark]";
 
 // Warning
-className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[warning-light] text-[warning-dark]"
+className =
+  "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[warning-light] text-[warning-dark]";
 
 // Error
-className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[error-light] text-[error-dark]"
+className =
+  "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[error-light] text-[error-dark]";
 ```
 
 ---
@@ -231,6 +262,7 @@ className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medi
 ## ♿ Accessibility
 
 ### Contrast Requirements
+
 > All text must meet WCAG 2.1 AA standards. Verify with a contrast checker tool when defining colors.
 
 - **Normal text** (< 18px): Minimum **4.5:1** contrast ratio against background
@@ -239,6 +271,7 @@ className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medi
 - **Non-text contrast** (charts, graphs, data visualization): Minimum **3:1** contrast ratio
 
 ### Focus States
+
 > All interactive elements MUST have visible focus indicators for keyboard navigation.
 
 - Focus ring: **2px solid** with **2px offset** — visible on all backgrounds
@@ -247,6 +280,7 @@ className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medi
 - Tab order must follow logical reading order — never use `tabindex > 0`
 
 ### Motion & Animation
+
 > Respect user preferences for reduced motion. All animations must be optional.
 
 - Default transition duration: **150ms** `ease-in-out` — [Quick enough to feel responsive, slow enough to perceive]
@@ -255,6 +289,7 @@ className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medi
 - Loading spinners and progress bars are exempt from reduced-motion (they communicate state)
 
 ### Keyboard Navigation
+
 - All interactive elements reachable via Tab key
 - Enter/Space activates buttons and links
 - Escape closes modals, dropdowns, and overlays
@@ -273,6 +308,7 @@ className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medi
 - **Color**: [How icons inherit color — e.g., "Icons inherit text color via currentColor. Never hardcode icon colors."]
 
 ### Icon Usage Guidelines
+
 - **Navigation**: [Which icons represent nav items — be consistent across mobile/desktop]
 - **Actions**: [Standard icons for common actions: edit, delete, save, close, search, filter]
 - **Status**: [Icons paired with status colors: check-circle for success, alert-triangle for warning, x-circle for error]
@@ -284,11 +320,11 @@ className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medi
 
 > Define breakpoints and how the layout adapts at each level.
 
-| Breakpoint | Width | Layout Behavior |
-|-----------|-------|-----------------|
-| Mobile | [< X]px | [Describe layout — e.g., "Single column, full-width cards, hamburger nav, bottom tab bar"] |
-| Tablet | [X-Y]px | [Describe layout — e.g., "Two-column grid for cards, sidebar collapses to overlay"] |
-| Desktop | [> Y]px | [Describe layout — e.g., "Three-column layout, persistent sidebar, max-width container"] |
+| Breakpoint | Width   | Layout Behavior                                                                            |
+| ---------- | ------- | ------------------------------------------------------------------------------------------ |
+| Mobile     | [< X]px | [Describe layout — e.g., "Single column, full-width cards, hamburger nav, bottom tab bar"] |
+| Tablet     | [X-Y]px | [Describe layout — e.g., "Two-column grid for cards, sidebar collapses to overlay"]        |
+| Desktop    | [> Y]px | [Describe layout — e.g., "Three-column layout, persistent sidebar, max-width container"]   |
 
 ---
 

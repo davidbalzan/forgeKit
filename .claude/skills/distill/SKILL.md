@@ -9,6 +9,14 @@ argument-hint: "[category] or <learning text>"
 
 Convert accumulated learnings from `~/.claude/knowledge/` into formal Architectural Decision Records for the current project.
 
+## Obsidian Format (Required)
+
+The target file `docs/DECISIONS.md` lives in the Obsidian vault and already has YAML frontmatter. When appending a distilled ADR:
+
+1. **Do NOT touch the existing frontmatter** at the top of the file.
+2. **Use `[[wikilinks]]`** where relevant inside the ADR body (link to `[[TECH_STACK]]`, `[[ARCHITECTURE_GUIDE]]`, etc.).
+3. **Update the ADR index table** below the frontmatter with a link to the new ADR.
+
 ## When to Use (Sparingly)
 
 Most learnings are fine as one-liners. Only distill when:

@@ -1,3 +1,9 @@
+---
+title: "Task Template Prompt"
+tags: [forgekit/template]
+aliases: []
+---
+
 # Task Template Development Prompt
 
 You are an expert software architect and project manager tasked with conducting a comprehensive codebase analysis and creating a detailed task plan. Your goal is to systematically probe the codebase, gather requirements from the user, and produce a thorough project specification following a structured template.
@@ -11,6 +17,7 @@ Work through the following stages systematically, probing the codebase extensive
 ## Stage 1: Initial Discovery & Project Scope
 
 ### 🔍 Codebase Exploration Tasks:
+
 1. **Repository Structure Analysis**
    - Explore the overall project structure and identify major components
    - Map out package/module organization and dependencies
@@ -23,6 +30,7 @@ Work through the following stages systematically, probing the codebase extensive
    - Examine configuration files and environment setup
 
 ### 💬 Essential User Questions:
+
 After initial exploration, ask the user:
 
 1. **Project Context**:
@@ -45,6 +53,7 @@ After initial exploration, ask the user:
 ## Stage 2: Deep Technical Analysis
 
 ### 🔍 Advanced Codebase Probing:
+
 1. **Dependency Mapping**
    - Analyze inter-module dependencies and coupling
    - Identify circular dependencies or architectural debt
@@ -61,6 +70,7 @@ After initial exploration, ask the user:
    - Examine error handling, logging, and monitoring patterns
 
 ### 💬 Technical Clarification Questions:
+
 1. **Current State Assessment**:
    - What are the main pain points with the current system?
    - Which components are working well and should be preserved?
@@ -81,6 +91,7 @@ After initial exploration, ask the user:
 ## Stage 3: Impact & Risk Analysis
 
 ### 🔍 Risk Assessment Exploration:
+
 1. **Breaking Change Analysis**
    - Identify public APIs and contracts that might change
    - Find hard dependencies between components
@@ -92,6 +103,7 @@ After initial exploration, ask the user:
    - Find manual processes that could be affected
 
 ### 💬 Risk & Impact Questions:
+
 1. **Business Impact**:
    - What are the consequences if this project fails or is delayed?
    - Are there any critical deadlines or external dependencies?
@@ -112,6 +124,7 @@ After initial exploration, ask the user:
 ## Stage 4: Detailed Component Inventory
 
 ### 🔍 Comprehensive Component Analysis:
+
 1. **Component Categorization**
    - Group components by function, layer, or domain
    - Assess the size and complexity of each component
@@ -123,6 +136,7 @@ After initial exploration, ask the user:
    - Find components that other parts of the system depend on
 
 ### 💬 Component-Specific Questions:
+
 For each major component category discovered:
 
 1. **Component Priority**:
@@ -140,6 +154,7 @@ For each major component category discovered:
 ## Stage 5: Task Planning & Sequencing
 
 ### 🔍 Dependency & Sequencing Analysis:
+
 1. **Task Dependency Mapping**
    - Identify which components must be migrated before others
    - Find parallel work streams that can proceed independently
@@ -151,6 +166,7 @@ For each major component category discovered:
    - Plan backwards compatibility strategies
 
 ### 💬 Planning & Timeline Questions:
+
 1. **Delivery Preferences**:
    - Would you prefer frequent small deliveries or fewer large milestones?
    - Are there any natural breakpoints where we should pause and validate?
@@ -171,6 +187,7 @@ For each major component category discovered:
 ## Stage 6: Success Criteria & Validation
 
 ### 💬 Final Clarification Questions:
+
 1. **Definition of Done**:
    - What specific functional requirements must be met?
    - Are there performance benchmarks or quality gates?
@@ -203,11 +220,10 @@ After completing all stages, synthesize your findings into a comprehensive task 
 
 - **Executive Summary**: Clear project overview with critical findings
 - **Detailed Component Inventory**: What needs to be migrated/implemented
-- **Risk Assessment**: Impact analysis and mitigation strategies  
+- **Risk Assessment**: Impact analysis and mitigation strategies
 - **Target Architecture**: Clear vision of the end state
 - **Phased Task Plan**: Detailed tasks with dependencies and timelines
 - **Success Criteria**: Measurable outcomes and quality gates
 - **Timeline Estimates**: Realistic projections with contingencies
 
 Remember: Your goal is to create a actionable roadmap that any developer could follow to successfully complete this project.
-

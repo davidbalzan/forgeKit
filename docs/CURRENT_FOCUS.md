@@ -1,3 +1,9 @@
+---
+title: "Current Focus"
+tags: [forgekit/core]
+aliases: ["Focus", "Current Work"]
+---
+
 # Current Focus
 
 > **Quick reference for AI assistants and team members to instantly know where work stands.**
@@ -27,9 +33,9 @@
 
 ## Key Files
 
-- Methodology: `FORGEKIT_METHODOLOGY.md`
-- Commands: `docs/COMMANDS.md`
-- Decisions: `docs/DECISIONS.md`
+- Methodology: [[FORGEKIT_METHODOLOGY]]
+- Commands: [[COMMANDS]]
+- Decisions: [[DECISIONS]]
 
 ---
 

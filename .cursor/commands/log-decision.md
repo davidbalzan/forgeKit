@@ -3,10 +3,13 @@
 **Objective**: Create an Architectural Decision Record (ADR) in `docs/DECISIONS.md`.
 
 **Requirements**:
+
 - Read existing ADRs to get the current count and format
 - Gather all required information before writing
 - Follow the established ADR format
 - Update the index table at the top of the file
+
+**Obsidian format (required)**: `docs/DECISIONS.md` has YAML frontmatter at the top — preserve it exactly when appending. Use `[[wikilinks]]` inside the ADR body where relevant (e.g. `[[TECH_STACK]]`, `[[DECISIONS#adr-003|ADR-003]]` for supersessions).
 
 ## Required Information
 
@@ -41,22 +44,25 @@ Ask for any missing details:
 ### Consequences
 
 **Positive:**
+
 - [Benefit 1]
 - [Benefit 2]
 
 **Negative:**
+
 - [Trade-off 1]
 - [Trade-off 2]
 
 **Risks:**
+
 - [Risk and mitigation]
 
 ### Alternatives Considered
 
 | Alternative | Pros | Cons | Why Not |
-|-------------|------|------|---------|
-| [Option 1] | ... | ... | ... |
-| [Option 2] | ... | ... | ... |
+| ----------- | ---- | ---- | ------- |
+| [Option 1]  | ...  | ...  | ...     |
+| [Option 2]  | ...  | ...  | ...     |
 ```
 
 ## Index Table
@@ -64,8 +70,8 @@ Ask for any missing details:
 Update the table at the top of `docs/DECISIONS.md`:
 
 ```markdown
-| ID | Decision | Status | Date |
-|----|----------|--------|------|
+| ID      | Decision                | Status      | Date       |
+| ------- | ----------------------- | ----------- | ---------- |
 | ADR-XXX | [Title](#adr-xxx-title) | ✅ Accepted | YYYY-MM-DD |
 ```
 

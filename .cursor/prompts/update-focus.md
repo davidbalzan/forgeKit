@@ -1,10 +1,14 @@
 # Update Focus - Session Progress Recorder
 
-Update the "Current Focus" section in `docs/PRODUCTION_ROADMAP.md` to capture session progress for future context.
+Update the "Current Focus" section in `docs/CURRENT_FOCUS.md` to capture session progress for future context.
+
+## Obsidian Format (Required)
+
+`docs/CURRENT_FOCUS.md` has YAML frontmatter — preserve it. Use `[[wikilinks]]` when referencing other docs in session notes (e.g. `[[DECISIONS#adr-005|ADR-005]]`, `[[phase2/README|Phase 2]]`).
 
 ## Instructions
 
-1. **Read docs/PRODUCTION_ROADMAP.md** to understand existing state (focus on the "Current Focus" section at the top)
+1. **Read docs/CURRENT_FOCUS.md** to understand existing state (focus on the "Current Focus" section at the top)
 2. **Gather session progress** from conversation context
 3. **Update the Current Focus section**:
    - Phase and task (if changed)
@@ -24,6 +28,7 @@ Update the "Current Focus" section in `docs/PRODUCTION_ROADMAP.md` to capture se
 **Last Updated**: YYYY-MM-DD
 
 ### Quick Context
+
 - **Done**: [Recent completions]
 - **Next**: [Upcoming work]
 - **Blockers**: [Any blockers, or "None"]

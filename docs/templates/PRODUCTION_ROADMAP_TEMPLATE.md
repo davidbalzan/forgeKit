@@ -1,3 +1,9 @@
+---
+title: "Production Roadmap Template"
+tags: [forgekit/template]
+aliases: ["Roadmap Template"]
+---
+
 # [Project Name] - Production Roadmap
 
 > Single source of truth for the project's journey from current state to production readiness. Updated as phases progress and priorities shift.
@@ -17,18 +23,21 @@
 ## 📊 Current State Assessment
 
 ### ✅ What We Have
+
 - [Feature/capability that is built and working — describe functional state, e.g., "Authentication with JWT tokens, tested against PostgreSQL"]
 - [Feature/capability that is built and working — include quality indicators like test coverage or performance metrics]
 - [Feature/capability that is built and working — note any limitations or known issues]
 - [Infrastructure that is set up — e.g., "CI/CD pipeline with GitHub Actions, deploys to staging on merge"]
 
 ### 🚨 What's Missing for Production
+
 - [Critical gap — describe what's missing, why it matters, and the risk of shipping without it, e.g., "Rate limiting: API is vulnerable to abuse without request throttling"]
 - [Critical gap — describe impact on users/business, e.g., "Error monitoring: No visibility into production failures, mean time to detect is unknown"]
 - [Critical gap — describe technical debt or quality concern, e.g., "Test coverage at 45%: Key user flows untested, refactoring is risky"]
 - [Critical gap — describe operational concern, e.g., "No database backup strategy: Single point of failure for all user data"]
 
 ### 📈 Production Readiness Score
+
 - **Functional Completeness**: [X]% — [Brief explanation of what's included in this assessment]
 - **Test Coverage**: [X]% — [Current coverage and target, e.g., "45% current → 80% target"]
 - **Security Posture**: [Low/Medium/High] — [Brief assessment, e.g., "Auth works but no rate limiting, CORS too permissive"]
@@ -45,6 +54,7 @@
 **Status**: [🟢 Complete / 🟡 In Progress / ⚪ Not Started]
 
 **Key Deliverables**:
+
 - [ ] [Deliverable with acceptance criteria — e.g., "User authentication: signup, login, logout, password reset flows all functional with email verification"]
 - [ ] [Deliverable with acceptance criteria — e.g., "Database schema: Core tables created with migrations, seeding script for dev data"]
 - [ ] [Deliverable with acceptance criteria — e.g., "API health monitoring: /health endpoint returns status, uptime, and version"]
@@ -61,6 +71,7 @@
 **Status**: [🟢 Complete / 🟡 In Progress / ⚪ Not Started]
 
 **Key Deliverables**:
+
 - [ ] [Deliverable with acceptance criteria — describe what "done" looks like for this feature]
 - [ ] [Deliverable with acceptance criteria — include measurable targets where possible]
 - [ ] [Deliverable with acceptance criteria — note integration points with other phases]
@@ -77,6 +88,7 @@
 **Status**: [🟢 Complete / 🟡 In Progress / ⚪ Not Started]
 
 **Key Deliverables**:
+
 - [ ] [Deliverable with acceptance criteria — e.g., "Rate limiting: 100 req/min per IP on public endpoints, 1000 req/min for authenticated"]
 - [ ] [Deliverable with acceptance criteria — e.g., "Error monitoring: Sentry integrated, alerts configured for error rate > 1%"]
 
@@ -87,11 +99,11 @@
 
 ## 📊 Implementation Priority Matrix
 
-| Phase | Priority | Blocks Other Phases? | Complexity | Duration | Key Risk |
-|-------|----------|---------------------|------------|----------|----------|
+| Phase           | Priority                            | Blocks Other Phases?           | Complexity                              | Duration  | Key Risk                |
+| --------------- | ----------------------------------- | ------------------------------ | --------------------------------------- | --------- | ----------------------- |
 | Phase 1: [Name] | [🔴 Critical / 🟡 High / 🟢 Medium] | [Yes → blocks Phase 2, 3 / No] | [Low/Medium/High — brief justification] | [X weeks] | [One-line risk summary] |
-| Phase 2: [Name] | [Priority] | [What it blocks] | [Complexity] | [X weeks] | [Risk summary] |
-| Phase 3: [Name] | [Priority] | [What it blocks] | [Complexity] | [X weeks] | [Risk summary] |
+| Phase 2: [Name] | [Priority]                          | [What it blocks]               | [Complexity]                            | [X weeks] | [Risk summary]          |
+| Phase 3: [Name] | [Priority]                          | [What it blocks]               | [Complexity]                            | [X weeks] | [Risk summary]          |
 
 **Critical Path**: [Describe the sequence of dependent phases that determines the minimum project duration, e.g., "Phase 1 → Phase 2 → Phase 3 (sequential, ~12 weeks total)"]
 
@@ -119,16 +131,19 @@
 ## 📈 Success Metrics
 
 ### Technical Metrics
+
 - [ ] [Metric with specific target — e.g., "API response time: p95 < 200ms for all endpoints"]
 - [ ] [Metric with specific target — e.g., "Test coverage: > 80% line coverage across all packages"]
 - [ ] [Metric with specific target — e.g., "Build time: < 60 seconds for full production build"]
 - [ ] [Metric with specific target — e.g., "Zero critical/high severity security vulnerabilities"]
 
 ### Business Metrics
+
 - [ ] [Metric with specific target — e.g., "User onboarding: < 2 minutes from signup to first value"]
 - [ ] [Metric with specific target — e.g., "Uptime: 99.9% availability during business hours"]
 
 ### Operational Metrics
+
 - [ ] [Metric with specific target — e.g., "Mean time to detect failures: < 5 minutes"]
 - [ ] [Metric with specific target — e.g., "Deployment frequency: ability to deploy multiple times per day"]
 
@@ -136,16 +151,16 @@
 
 ## 🔄 Revision History
 
-| Date | Change | Reason |
-|------|--------|--------|
+| Date                       | Change                  | Reason                                     |
+| -------------------------- | ----------------------- | ------------------------------------------ |
 | [Date of initial creation] | Initial roadmap created | [Project kickoff / sprint planning / etc.] |
 
 ---
 
 ## 🔗 Related Documents
 
-- **[Tech Stack](./TECH_STACK.md)** - Technology choices and versions
-- **[Architecture Guide](./ARCHITECTURE_GUIDE.md)** - System design and patterns
-- **[Decisions Log](./DECISIONS.md)** - Architectural Decision Records
+- **[[TECH_STACK|Tech Stack]]** - Technology choices and versions
+- **[[ARCHITECTURE_GUIDE|Architecture Guide]]** - System design and patterns
+- **[[DECISIONS|Decisions Log]]** - Architectural Decision Records
 - **[Phase Details](./phases/)** - Detailed phase task breakdowns with checklists
-- **[Current Focus](../CURRENT_FOCUS.md)** - What's actively being worked on right now
+- **[[CURRENT_FOCUS|Current Focus]]** - What's actively being worked on right now

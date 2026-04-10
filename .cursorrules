@@ -16,7 +16,7 @@ This project uses **ForgeKit** — a documentation-driven approach:
 4. **Update progress** — Check boxes as tasks complete
 
 ### Key Documents
-- `CURRENT_FOCUS.md` — Active work context
+- `docs/CURRENT_FOCUS.md` — Active work context
 - `docs/PRODUCTION_ROADMAP.md` — Single source of truth (Current Focus at top)
 - `docs/DECISIONS.md` — Architectural Decision Records
 - `docs/TECH_STACK.md` — Technology choices & versions

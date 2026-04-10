@@ -1,7 +1,13 @@
+---
+title: "Stack Map"
+tags: [forgekit/core]
+aliases: ["Stack"]
+---
+
 # Stack Map
 
 > Quick reference: every technology → the files you touch to swap it.
-> For the "why" behind each choice, see [`docs/DECISIONS.md`](docs/DECISIONS.md).
+> For the "why" behind each choice, see [[DECISIONS|[[DECISIONS]]]].
 
 ---
 
